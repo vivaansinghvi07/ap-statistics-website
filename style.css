@@ -1,0 +1,40 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+.title {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 25px;
+}
+.notes {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 20px;
+}
+.bold {
+  font-weight: bold;
+}
+.menu {
+  font-size: 25px;
+  margin-left: 60px;
+}
+.pagelink {
+  color: #000000;
+}
+.image {
+  max-height: 15vw;
+  width: auto;
+  border: 1px solid #000000;
+  margin: 10px;
+}
+.data-inp {
+  margin: 0px 50px;
+}
+.table {
+  width: 80vw;
+  margin: 20px auto;
+}
+.bottomborder {
+  margin: 50px 0px;
+}

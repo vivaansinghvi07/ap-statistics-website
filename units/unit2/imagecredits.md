@@ -1,0 +1,9 @@
+# Image Credits For Unit 2:
+- [Cumulative Relative Frequency Graph](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.crackap.com%2Fap%2Fstatistics%2Fquestion-138-answer-and-explanation.html&psig=AOvVaw2M5Ppd6ZPtnZ72IF7KUIyx&ust=1675985887869000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjArt6PjIf9AhUAAAAAHQAAAAAQAw)
+- [Density Curve](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.data-to-viz.com%2Fgraph%2Fdensity.html&psig=AOvVaw1d5DDyxeNO6vh7J-ZGMjZF&ust=1676002055102000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwiAwOityIf9AhUAAAAAHQAAAAAQAw)
+- [Density Curve Skewed](https://www.google.com/url?sa=i&url=https%3A%2F%2Fdigfir-published.macmillanusa.com%2Fpsbe4e%2Fpsbe4e_ch1_11.html&psig=AOvVaw1d5DDyxeNO6vh7J-ZGMjZF&ust=1676002055102000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwiAwOityIf9AhUAAAAAHQAAAAAQIg)
+- [Normal Density Curve](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.stats4stem.org%2Fdensity-curves&psig=AOvVaw1d5DDyxeNO6vh7J-ZGMjZF&ust=1676002055102000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwiAwOityIf9AhUAAAAAHQAAAAAQKw)
+- [Table A](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dummies.com%2Farticle%2Facademics-the-arts%2Fmath%2Fstatistics%2Fhow-to-use-the-z-table-147241%2F&psig=AOvVaw0i11aOHxlqDmJgNbLWKEFU&ust=1676002349762000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjww_m3yYf9AhUAAAAAHQAAAAAQGQ)
+- [Scatter Plot](https://www.google.com/url?sa=i&url=https%3A%2F%2Fchartio.com%2Flearn%2Fcharts%2Fwhat-is-a-scatter-plot%2F&psig=AOvVaw2Th2y5isRIplNfqqRm957B&ust=1676004341636000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjozq7t0If9AhUAAAAAHQAAAAAQAw)
+- [Regression Line](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRegression_analysis&psig=AOvVaw3NPGlp_zQCzEedjR2CsyMv&ust=1676045880386000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwiAqYHP64j9AhUAAAAAHQAAAAAQPg)
+- [Residual Plot](https://www.statisticshowto.com/residual-plot/)

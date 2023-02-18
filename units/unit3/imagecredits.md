@@ -1,0 +1,5 @@
+# Image Credits for Unit 3:
+- [Blocking Diagram](https://www.google.com/url?sa=i&url=https%3A%2F%2Ffaculty.elgin.edu%2Fdkernler%2Fstatistics%2Fch01%2F1-6.html&psig=AOvVaw0hJCM3NLYAp_YNWD64ggKq&ust=1676271233632000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjAr_SNs4_9AhUAAAAAHQAAAAAQAw)
+- [Stratified Random Sample Diagram](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallstreetmojo.com%2Fstratified-sampling%2F&psig=AOvVaw2VvXvVMD60ajBgp-YAdQ7l&ust=1676330981402000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwiwiq7YkZH9AhUAAAAAHQAAAAAQCA)
+- [Cluster Sampling Diagram](https://www.google.com/url?sa=i&url=https%3A%2F%2Fstatisticsbyjim.com%2Fbasics%2Fcluster-sampling%2F&psig=AOvVaw20DiZrQSnLaXs_T-le6_Zf&ust=1676331121847000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjg7uWakpH9AhUAAAAAHQAAAAAQBw)
+- [Sample AP Question](https://apcentral.collegeboard.org/courses/ap-statistics/exam/past-exam-questions)
