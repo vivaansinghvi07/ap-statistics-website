@@ -16,6 +16,7 @@ function change() {
     // sets the index which will be skipped
     var index = (type === "indep") ? 0 : (type === "cond") ? 1 : (type === "or") ? 2 : 0;
 
+    // goes through each setting in the array of settings and performs hte necessary operation, either hidiing it or revealing it
     settings.forEach(function(setting, i) {
         if (i === index) {
             setting.removeAttribute("hidden");
