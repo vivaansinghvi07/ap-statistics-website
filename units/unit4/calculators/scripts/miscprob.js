@@ -10,11 +10,14 @@ function change() {
     // clears the output
     document.getElementById("output").innerHTML = null;
     
-    // if nothing is selected, clear the settings
+    // creates an array for the settings and a corresponding array for the types
     var settings = new Array(indepSettings, condSettings, orSettings);
+    var types = new Array("indep", "cond", "or");
 
-    // sets the index which will be skipped
-    var index = (type === "indep") ? 0 : (type === "cond") ? 1 : (type === "or") ? 2 : 0;
+    // sets the index that will be skipped based on what item is selected
+    var index = types.findIndex(function(item){
+        return item === type;
+    });
 
     // goes through each setting in the array of settings and performs hte necessary operation, either hidiing it or revealing it
     settings.forEach(function(setting, i) {
