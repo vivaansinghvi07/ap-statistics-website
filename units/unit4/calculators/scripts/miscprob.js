@@ -26,3 +26,49 @@ function change() {
     });
 }
 
+function orChange() {
+    // gets the setting which will show if its not independent
+    var setting = document.getElementById("or-indep");
+
+    // if its checked, show it, else hide it
+    if (document.getElementById("ind-check").checked) {
+        setting.removeAttribute("hidden");
+    }
+    else {
+        setting.setAttribute("hidden", "hidden");
+    }
+}
+
+function calculate() {
+    // gets the type to be analyzed
+    var type = document.getElementById("type").value;
+
+    // stores the output as a variable
+    var output = document.getElementById("output");
+
+    if (type === "blank") {
+        output.innerHTML = "You must select an operation and enter its values!";
+        return false;
+    }
+    else if (type === "indep") {
+        calcIndep(output);
+    }
+    else if (type === "or") {
+        calcOr(output);
+    }
+    else if (type === "cond") {
+        calcCond(output);
+    }
+}
+
+function calcIndep(output) {
+    // code this
+}
+
+function calcOr(output) {
+    // code this
+}
+
+function calcCond(output) {
+    // code this 
+}
