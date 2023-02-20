@@ -48,57 +48,51 @@
     <hr>
     
     <ul class = "notes">
-        <li>A&nbsp;<strong>parameter&nbsp;</strong>is a characteristic of a population, while a&nbsp;<strong>statistic</strong> is a characteristic of a sample
+        <li>A&nbsp;<strong>sample proportion</strong>, represented by \(\hat{p}\), represents a proportion (between 0 and 1) of the sample that meet a certain criteria
             <ul>
-                <li>Often, statistics are used to estimate parameters</li>
-                <li>A parameter would be \(\mu\), while the statistic would be \(\overline{x}\)
-                    <ul>
-                        <li>For a proportion, the parameter would be \(p\), while the statistic would be \(\hat{p}\)</li>
-                    </ul>
-                </li>
+                <li>The percent of those who would choose blue over red in a sample of 50 people is an example of one</li>
             </ul>
         </li>
-        <li>&nbsp;When you have a dataset, you often need to take a sample of it</li>
-        <li>If you take many repeated samples of the same size, and determine \(\overline{x}\) or \(\hat{p}\) from each one, and plot each value, you should end up with a <strong>sampling distribution</strong>
+        <li>When you take many samples, and determine that sample proportion for each one, and then plot it on a graph (such as a histogram), you should get your&nbsp;<strong>sample distribution</strong>
             <ul>
-                <li>The concept of&nbsp;<strong>sampling variability&nbsp;</strong>states that one sample will probably differ from the next</li>
-                <li>A&nbsp;<strong>statistic's variability</strong> is essentially the spread of the sampling distribution
+                <li>For sake of discussion, lets define the sample size to be \(n\) and the counts of success in one sample \(X\)
                     <ul>
-                        <li>Dependent on the sample size \(n\)</li>
-                        <li>A larger sample size leads to a lower variability because the statistic is more likely to gravitate to the actual parameter</li>
-                        <li><img class = "image" src = "../imgs/samplingdist.png"></li>
+                        <li>\(\frac{X}{n}\) will yield the sample proportion - the proportion of successes in a sample</li>
                     </ul>
                 </li>
-                <li>A sampling distribution is represented by a curve, with either \(\overline{x}\) or \(\hat{p}\) on the x-axis, with the frequency/probability of the value on the y-axis
+                <li>For proportions, these sample distributions have several aspects which can be determined using given information
                     <ul>
-                        <li>Ideally, with a large sample size, should look like a normal distribution</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Sampling distributions can be described through their accuracy
-            <ul>
-                <li>We say a statistic is an&nbsp;<strong>unbiased estimator</strong> of a parameter if the statistic's sampling distribution's mean is equal to the parameter
-                    <ul>
-                        <li>Generally, the sample mean or proportion will be an unbiased estimator is the sample if taken properly</li>
-                        <li>Things like the standard deviation, variance, or range will be <strong>biased estimators</strong>, which will tend to under or overestimate values
+                        <li><strong>Center:</strong> the center of a sample distribution for a proportion is simply equal to the parameter itself<br />
                             <ul>
-                                <li>Therefore, to relate the standard deviation of a population to that of the sampling distribution, you will need to perform some operations which will be covered later on</li>
+                                <li>\(\mu_{\hat{p}} = p\)</li>
+                                <li>This is only if the samples are random - \(\hat{p}\) must be an&nbsp;<strong>unbiased estimator</strong> of \(p\)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Spread:&nbsp;</strong>the <strong>standard deviation</strong>&nbsp;of a sample distribution is equal to \(\sqrt{\frac{p(1-p)}{n}}\)
+                            <ul>
+                                <li>This is only true given the&nbsp;<strong>10% Condition</strong>: the sample size must be less than one-tenth of the population size
+                                    <ul>
+                                        <li>If this is not given to you, you can make assumptions</li>
+                                        <li>A sample size of 1000 for all American adults is obviously less than one-tenth of the population of American adults (we know there are more than 10000 American adults)</li>
+                                    </ul>
+                                </li>
+                                <li>This is represented by \(\sigma_{\hat{p}}\)</li>
+                                <li>Recall that this is similar to that of the binomial distribution - all that is happening here is the division by \(n\), which, when inside the square root, becomes division by \(n^2\)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Shape:&nbsp;</strong>under certain conditions, the sampling distribution can be approximated to a normal curve. This is essential to statistics as you can perform many statistical tests and analyses on normal curves
+                            <ul>
+                                <li>This is only if the <strong>Large Counts Condition&nbsp;</strong>is met
+                                    <ul>
+                                        <li>\(n(p) \ge 10\) &nbsp; and &nbsp; \(n(1-p) \ge 10\)</li>
+                                        <li>Essentially insures the sample size is large enough to avoid the sampling distribution becoming not normal</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-                <li>Larger sample sizes make the statistic more&nbsp;<strong>precise</strong>, regardless of&nbsp;<strong>accuracy</strong>
-                    <ul>
-                        <li><img class = "image" src = "../imgs/accvspres.png"></li>
-                        <li><strong>Bias&nbsp;</strong>indicates constantly missing,&nbsp;<strong>accuracy&nbsp;</strong>means hitting near the target,&nbsp;<strong>precise&nbsp;</strong>means how close together the guesses are</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>A sampling distribution is not to be confused with the&nbsp;<strong>distribution of sampling data</strong>
-            <ul>
-                <li>This is just the distribution of data within one sample, while the sampling distribution is the distribution of the sample means / sample proportions</li>
+                <li>The key is that when you know that the distribution is normal, and you know the center and spread, you are able to make many forms of calculations. For example, you can find the probability that a sample mean is measured to be 1 standard deviation above the mean using&nbsp;<strong>normcdf()</strong> or similar calculations</li>
             </ul>
         </li>
     </ul>
