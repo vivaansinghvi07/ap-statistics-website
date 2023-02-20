@@ -23,7 +23,7 @@ function calculate() {
   var IQR = q3 - q1;
 
   // outputs the values that are in the five number summary + IQR
-  var outStr = "<td>" + String(min) + "</td>\n<td>" + String(q1) + "</td>\n<td>" + String(med) + "</td>\n<td>" + String(q3) + "</td>\n<td>" + String(max) + "</td>\n<td>" + String(IQR) + "</td>";
+  var outStr = "<td>" + String(min) + "</td>\n<td>" + String(q1) + "</td>\n<td>" + String(med) + "</td>\n<td>" + String(q3) + "</td>\n<td>" + String(max) + "</td>\n<td>" + IQR.toFixed(5); + "</td>";
   fiveNumOutput.innerHTML = outStr;
 
   // gets if the data is for a sample or population and declares variance and standard deviation
