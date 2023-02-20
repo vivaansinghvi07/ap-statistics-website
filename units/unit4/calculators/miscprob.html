@@ -65,12 +65,12 @@
       <select id = "type" class="form-select" aria-label="Default select example" onchange = "change(); return false;">
         <option selected value="blank">Select the type of operation:</option>
         <option value="cond">Calculate Conditional Probability: P(A | B) = P(A and B) / P(B)</option>
-        <option value="indep">Calculate Indepdence: P(A | B) = P(A)</option>
+        <option value="indep">Calculate Independence: P(A | B) = P(A)</option>
         <option value="or">Calculate Union: P(A or B) = P(A) + P(B) - P(A and B)</option>
       </select>
       <div hidden = "hidden" id = "cond-settings" class="row g-3" style = "margin-top: 18px;">
         <div class="col">
-          <input type="text" class="form-control" id = "cond-a&b" placeholder="P(A and B)" aria-label="Probability of A and B">
+          <input type="text" class="form-control" id = "cond-anb" placeholder="P(A and B)" aria-label="Probability of A and B">
         </div>
         <div class="col">
           <input type="text" class="form-control" id = "cond-b" placeholder="P(B)" aria-label="Probability of B">
@@ -85,6 +85,9 @@
             <input type="text" class="form-control" id = "indep-a" placeholder="P(A)" aria-label="Probability of A">
           </div>
         </div>
+        <div style = "text-align: center">
+          Note: This is not a definitive calculator; it is just an estimation and the true answer depends on several factors like sample size. Use this merely as a reference.
+        </div>
       </div>
       <div hidden = "hidden" id = "or-settings">
         <div class="row g-3" style = "margin-top: 18px; margin-bottom: 20px;">
@@ -95,7 +98,7 @@
             <input type="text" class="form-control" id = "or-b" placeholder="P(B)" aria-label="Probability of B">
           </div>
           <div id = "or-indep" hidden="hidden" class="col">
-            <input type="text" class="form-control" id = "or-b" placeholder="P(A and B)" aria-label="Probability of A and B">
+            <input type="text" class="form-control" id = "or-anb" placeholder="P(A and B)" aria-label="Probability of A and B">
           </div>
         </div>
         <div class="form-check">
