@@ -22,6 +22,11 @@ function change() {
     })
     .catch(error => console.error(error));
 
+    // displays a historgram using the data, to show the distribution
+
+    // TODO: get start and bin widths based on the type
+    // TODO: display the graph
+
 }
 
 function calculate() {
