@@ -1,6 +1,11 @@
-// defines a function that calcuates the normal probability of something - for the graph
+// defines a function that calcuates the normal probability of something, for the graph. Source: https://en.wikipedia.org/wiki/Normal_distribution#Cumulative_distribution_function
 function normalFunction(mu, sigma, x) {
     return (1 / (sigma * Math.sqrt(2))) * Math.exp(-0.5 * (((x-mu) / sigma)**2));
+}
+
+// defines a function that is the integral of a normal curve. Source: myself
+function areaUnderNormal(mu, sigma, x) {
+    return (1 / (sigma**2 * 2 * Math.sqrt(2))) * Math.exp(-0.5 * (((x-mu) / sigma)**2));
 }
 
 function change() {
@@ -48,5 +53,23 @@ function propChange() {
     else {
         extraSetting.setAttribute("hidden", "hidden");
         propLower.setAttribute("placeholder", "Sample Proportion (a)");
+    }
+}
+
+// adds the upper bound for the means
+function meanChange() {
+    // gets the extra setting
+    var extraSetting = document.getElementById("mean-extra-settings");
+
+    // gets the var for the mean lower bound
+    var meanLower = document.getElementById("mean-xbar-a");
+
+    if (document.getElementById("mean-operation").value === "between") {
+        extraSetting.removeAttribute("hidden");
+        meanLower.setAttribute("placeholder", "Lower Bound (a)");
+    }
+    else {
+        extraSetting.setAttribute("hidden", "hidden");
+        meanLower.setAttribute("placeholder", "Mean Proportion (a)");
     }
 }
