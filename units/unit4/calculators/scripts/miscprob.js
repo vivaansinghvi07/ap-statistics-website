@@ -67,8 +67,8 @@ function calculate() {
 
 function calcIndep(output) {
     // gets the values for determining independence
-    var agb = evalFraction(document.getElementById("indep-agb").value, output);
-    var a = evalFraction(document.getElementById("indep-a").value, output);
+    var agb = evalProbability(document.getElementById("indep-agb").value, output);
+    var a = evalProbability(document.getElementById("indep-a").value, output);
 
     // checks if function needs to be quit
     if (agb === "q" || a === "q") {
@@ -87,8 +87,8 @@ function calcIndep(output) {
 
 function calcOr(output) {
     // gets the probabilities
-    var a = evalFraction(document.getElementById("or-a").value, output);
-    var b = evalFraction(document.getElementById("or-b").value, output);
+    var a = evalProbability(document.getElementById("or-a").value, output);
+    var b = evalProbability(document.getElementById("or-b").value, output);
 
     // checks if need to quit
     if (a === "q" || b === "q") {
@@ -98,7 +98,7 @@ function calcOr(output) {
     // if the data is not independent, you will need to get the union input
     if (document.getElementById("ind-check").checked) {
         // gets the value for a and b
-        var anb = evalFraction(document.getElementById("or-anb").value, output);
+        var anb = evalProbability(document.getElementById("or-anb").value, output);
 
         // checks if needs to quit
         if (anb === "q") {
@@ -119,8 +119,8 @@ function calcOr(output) {
 
 function calcCond(output) {
     // gets input
-    var anb = evalFraction(document.getElementById("cond-anb").value, output);
-    var b = evalFraction(document.getElementById("cond-b").value, output);
+    var anb = evalProbability(document.getElementById("cond-anb").value, output);
+    var b = evalProbability(document.getElementById("cond-b").value, output);
 
     // check if the function needs to be exited based on quits
     if (anb === "q" || b === "q") {

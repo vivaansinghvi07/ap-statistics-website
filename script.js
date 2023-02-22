@@ -1,4 +1,4 @@
-function evalFraction(str, output) {
+function evalProbability(str, output) {
     try {
         // splits the string based on if there is a slash
         var num = str.split("/");
