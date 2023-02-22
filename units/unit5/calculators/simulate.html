@@ -54,11 +54,11 @@
     </nav>
 
     <header class = "title">
-      Miscellaneous Probability Operations
+      Simulate A Sampling Distribution
     </header>
     <hr>
 
-    <div style = "text-align: center" class = "notes">This calculator is encouraged to be used with tabular data; for when you are given a two way table and want to conduct operations with it. Therefore, it allows you to enter data in fractional form if you need to. Regular numbers are still acceptable, such as decimals</div>
+    <div style = "text-align: center" class = "notes">In this calculator, you can simulate the creation of a sampling distribution! You are able to choose the sample size and have many samples are taken at a time! This tool samples with replacement</div>
     <hr>
 
     <form action = "" class = "data-inp">
@@ -68,56 +68,32 @@
         <option value="skewed">Skewed Distribution</option>
         <option value="uniform">Uniform Distribution</option>
       </select>
-      <div hidden = "hidden" id = "cond-settings" class="row g-3" style = "margin-top: 18px;">
+      <div hidden = "hidden" id = "settings" class="row g-3" style = "margin-top: 18px;">
         <div class="col">
-          <input type="text" class="form-control" id = "cond-anb" placeholder="P(A and B)" aria-label="Probability of A and B">
+          <input type="text" class="form-control" id = "n" placeholder="Sample Size" aria-label="Sample Size">
         </div>
         <div class="col">
-          <input type="text" class="form-control" id = "cond-b" placeholder="P(B)" aria-label="Probability of B">
+          <input type="text" class="form-control" id = "cnt" placeholder="Sample Count" aria-label="Sample Count">
         </div>
       </div>
-      <div hidden = "hidden" id = "indep-settings">
-        <div class="row g-3" style = "margin-top: 18px; margin-bottom: 20px;">
-          <div class="col">
-            <input type="text" class="form-control" id = "indep-agb" placeholder="P(A | B)" aria-label="Probability of A given B">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" id = "indep-a" placeholder="P(A)" aria-label="Probability of A">
-          </div>
-        </div>
-        <div style = "text-align: center">
-          Note: This is not a definitive calculator; it is just an estimation and the true answer depends on several factors like sample size. Use this merely as a reference.
-        </div>
-      </div>
-      <div hidden = "hidden" id = "or-settings">
-        <div class="row g-3" style = "margin-top: 18px; margin-bottom: 20px;">
-          <div class="col">
-            <input type="text" class="form-control" id = "or-a" placeholder="P(A)" aria-label="Probability of A">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" id = "or-b" placeholder="P(B)" aria-label="Probability of B">
-          </div>
-          <div id = "or-indep" hidden="hidden" class="col">
-            <input type="text" class="form-control" id = "or-anb" placeholder="P(A and B)" aria-label="Probability of A and B">
-          </div>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="ind-check" onchange="orChange(); return false;">
-          <label class="form-check-label" for="ind-check">
-            These variables are not independent
-          </label>
-        </div>
-      </div>
-      <button style = "display: block; margin: 30px auto;" type="Submit" class="btn btn-primary" onclick="calculate();return false;">Calculate</button>
+      <button style = "display: block; margin: 30px auto 0px;" type="Submit" class="btn btn-primary" onclick="calculate();return false;">Sample</button>
+      <button style = "display: block; margin: 0px auto 30px; font-size: 15px" type="Submit" class="btn" onclick="clearSamples(); return false;">Clear</button>
     </form>
     <hr style = "margin-bottom: 40px">
 
     <div class = "notes" id = "output" style = "font-size: 25px; text-align: center">
       
     </div>
-      
-    <div class = "float-start" style = "margin: 50px; width: 30vw; height: auto" id="container1"></div>
-    <div class = "float-end" style = "margin: 50px; width: 30vw; height: auto" id="container2"></div>
+    
+    <div class = "float-start" style = "margin-left: 45px; width: 40vw; height: auto" hidden = "hidden" id = "disp1">
+      <label style = "font-size: 20px;" for = "container1">Population Distribution</label>
+      <div id = "container1"></div>  
+    </div>
+
+    <div class = "float-end" style = "margin-right: 45px; width: 40vw; height: auto" hidden = "hidden" id = "disp2">
+      <label style = "font-size: 20px;" for = "container2">Sample Distribution</label>
+      <div id = "container2"></div>
+    </div>
     
   </body>
 </html>
