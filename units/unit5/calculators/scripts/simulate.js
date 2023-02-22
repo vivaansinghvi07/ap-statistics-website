@@ -18,14 +18,56 @@ function change() {
     fetch("/units/unit5/calculators/datasets/" + filename)
     .then(response => response.text())
     .then(data => {
+      // copies the data onto the dataset variable
       dataset = data.split(/[\s\n]+/).map(parseFloat);
+
+      // declares bounds and steps for the graph based on the type being analyzed
+      var graphSettings;
+      if (type === "normal") {
+        graphSettings = [-3, 3, 0.2];
+      }
+      else if (type === "skewed") {
+        graphSettings = [-2, 7, 0.2];
+      }
+      else if (type === "uniform") {
+        graphSettings = [0, 1, 0.1];
+      }
+
+      // assigns the settings to variables
+      var [start, end, step] = graphSettings;
+
+      console.log(dataset);
+
+      // creates a layout for the graph based on plotly docs
+      var trace = {
+        x: dataset,
+        type: 'histogram',
+        marker: {
+          color: "rgba(0, 120, 136, 0.7)",
+          line: {
+            color:  "rgba(0, 120, 136, 1)", 
+            width: 1
+          },
+        },
+        xbins: {
+          start: start,
+          end: end, 
+          size: step
+        },
+      };
+
+      // sets a space between bars and title
+      var layout = {
+        bargap: 0.05,
+        yaxis: {
+          title: "Count"
+        }
+      };
+
+      // plots the graph
+      Plotly.newPlot(container1, [trace], layout);
     })
     .catch(error => console.error(error));
-
-    // displays a historgram using the data, to show the distribution
-
-    // TODO: get start and bin widths based on the type
-    // TODO: display the graph
 
 }
 
