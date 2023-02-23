@@ -69,3 +69,72 @@ function evalNumber(str, output) {
         return "q";
     }
 }
+
+function plotNormalGraphs(mu, sigma, container, lowerB, upperB) {
+
+    // defines bounds for the graph
+    let step = sigma * 4;
+    let start = mu - step;
+    let stop = mu + step;
+
+    // defines arrays for points
+    let xValues = new Array(), yValues = new Array();
+
+    // populates the arrays with numbers
+    for (let i = start; i < stop; i += step / 1000) {
+        xValues.push(i);
+        yValues.push(normalFunction(mu, sigma, i));
+    }
+
+    // layout for the backgruond graph based on documentation
+    var background = {
+        x: xValues,
+        y: yValues,
+        type: 'scatter',
+        mode: 'lines',
+        line: {
+            color:  "rgba(0, 120, 136, 1)", 
+        },
+    };
+
+    // limits the bounds
+    lowerB = lowerB < start ? start : lowerB;
+    upperB = upperB > stop ? stop : upperB;
+
+    // creates arrays for teh foreground graph
+    let newXValues = new Array(), newYValues = new Array();
+    
+    // populates the arrats up till the bounds
+    for (let i = lowerB; i < upperB; i += step / 1000) {
+        newXValues.push(i);
+        newYValues.push(normalFunction(mu, sigma, i));
+    }
+
+    // creates foregound for the bounds
+    var foreground = {
+        x: newXValues,
+        y: newYValues,
+        type: 'scatter',
+        mode: 'lines',
+        fill: 'tozeroy',
+        line: {
+            color:  "rgba(0, 120, 136, 1)", 
+        },
+    };
+
+    // layout for graph
+    var layout = {
+        title: "Visualization On a Normal Curve",
+        yaxis: {
+            showticklabels: false
+        },
+        showlegend: false
+    };  
+
+    // plots the graph
+    Plotly.newPlot(container, [background, foreground], layout);
+}
+
+function loadMathJax(id) {
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, id]);
+}
