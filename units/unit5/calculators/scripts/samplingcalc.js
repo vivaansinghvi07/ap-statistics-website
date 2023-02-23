@@ -221,6 +221,7 @@ function calculate() {
             let operationString = (operation === "greater" ? "\\gt" : "\\lt");
             // fills in the process
             doo.innerHTML = doTitle + "<br> \\(P(\\overline{x} " + operationString + String(a) + ")\\)<br>" + 
+                                       "<br> \\(= P(z " + operationString + " \\frac{" + String(a) + " - \\mu_{\\overline{x}}}{\\sigma_{\\overline{x}}})\\)<br>" +
                                        "<br> \\(= P(z " + operationString + " \\frac{" + String(a) + " - " + String(sampleMu) + "}{" + sampleSigma.toFixed(3) + "})\\)<br>" + 
                                        "<br> \\(= " + answer.toFixed(3) + "\\)";
 
@@ -228,7 +229,7 @@ function calculate() {
             loadMathJax("do");
 
             conclude.innerHTML = concludeTitle + "Therefore, we can conclude that the probability that a sample mean from the given parameters" + 
-                                                 "(fill these out when you answer a question; I'm too lazy though) will be " + operation + " than " +
+                                                 " will be " + operation + " than " +
                                                  String(a) + " is " + answer.toFixed(3) + ".";
         }
 
@@ -308,11 +309,53 @@ function calculate() {
             loadMathJax("do");
 
             // fills in the conclude section
-            conclude.innerHTML = concludeTitle + "Therefore, we can conclude that the probability that a sample will have a proportion between " + String(a) + " and " + String(b) + " is equal to " + answer.toFixed(3) + ".";
+            conclude.innerHTML = concludeTitle + "Therefore, we can conclude that the probability that a sample from a population with the given parameters will have a proportion between " + String(a) + " and " + String(b) + " is equal to " + answer.toFixed(3) + ".";
 
         }
         else {
+            // gets the bound
+            a = evalProbability(document.getElementById("prop-phat-a").value, output);
+            
+            // checks for quit
+            if (a === "q") {
+                return false;
+            }
 
+            // declares values for lowerbound and upperbound
+            lowerbound = sampleMu - sampleSigma * 10;
+            upperbound = sampleMu + sampleSigma * 10;
+
+            // assigns either the lowerbound or the upperbound to be a, depending on the type of operation
+            if (operation === "greater") {
+                lowerbound = a;
+            }
+            else {
+                upperbound = a;
+            }
+
+            // gets the probability
+            let answer = areaUnderNormal(sampleMu, sampleSigma, upperbound) - areaUnderNormal(sampleMu, sampleSigma, lowerbound);
+
+            // fills in the answer
+            state.innerHTML = stateTitle + "Using a sampling distribution for proportions, we need to calculate the probability that a sample proportion " + 
+            "from a sample size of " + String(n) + " will be " + operation + " than " + String(a) + " given the population proportion " + String(popProp) + ".";
+
+            // gets the string to use in latex depending on what the operation is
+            let operationString = (operation === "greater" ? "\\gt" : "\\lt");
+
+            // fills in the process
+            doo.innerHTML = doTitle + "<br> \\(P(\\hat{p} " + operationString + String(a) + ")\\)<br>" + 
+                                       "<br> \\(= P(z " + operationString + " \\frac{" + String(a) + " - \\mu_{\\hat{p}}}{\\sigma_{\\hat{p}}})\\)<br>" +
+                                       "<br> \\(= P(z " + operationString + " \\frac{" + String(a) + " - " + String(sampleMu) + "}{" + sampleSigma.toFixed(3) + "})\\)<br>" + 
+                                       "<br> \\(= " + answer.toFixed(3) + "\\)";
+
+            //loads the MathJax
+            loadMathJax("do");
+
+            // fills in the conclusion
+            conclude.innerHTML = concludeTitle + "Therefore, we can conclude that the probability that a sample proportion from the given population parameters" + 
+                                                 " will be " + operation + " than " +
+                                                 String(a) + " is " + answer.toFixed(3) + ".";
         }
 
         // calculates whether the large counts condition is met
@@ -333,5 +376,8 @@ function calculate() {
 
     // plots the graph
     plotNormalGraphs(sampleMu, sampleSigma, container, lowerbound, upperbound);
+
+    // adds a border to the bottom
+    border.removeAttribute("hidden");
 
 }
