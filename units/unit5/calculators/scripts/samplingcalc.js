@@ -1,7 +1,7 @@
-var stateTitle = "<div style=\"font-size: 28px;\">State:</div>";
-var planTitle = "<div style=\"font-size: 28px;\">Plan:</div>";
-var doTitle = "<div style=\"font-size: 28px;\">Do:</div>";
-var concludeTitle = "<div style=\"font-size: 28px;\">Conclude:</div>";
+const stateTitle = "<div style=\"font-size: 28px;\">State:</div>";
+const planTitle = "<div style=\"font-size: 28px;\">Plan:</div>";
+const doTitle = "<div style=\"font-size: 28px;\">Do:</div>";
+const concludeTitle = "<div style=\"font-size: 28px;\">Conclude:</div>";
 
 function change() {
     // gets the type of variable being analyzed
