@@ -109,7 +109,7 @@ function calculate() {
     container.innerHTML = null;
 
     // hides the border
-    var border = document.querySelector("#bottomborder");
+    var border = document.getElementById("border");
     border.setAttribute("hidden", "hidden");
 
     // gets the type of variabl 
@@ -137,6 +137,9 @@ function calculate() {
         if (popMu === "q" || popSigma === "q" || n === "q") {
             return false;
         }
+
+        // converts n to an integer
+        n = parseInt("" + n);
 
         // calculates the sample distribution params based on the input
         sampleMu = popMu;
@@ -242,11 +245,11 @@ function calculate() {
         }
 
         // fills the plan section
-        plan.innerHTML = planTitle + "Declaring Variables: <br>" + "\\(\\overline{x} = \\text{sample mean} \\quad \\quad \\mu_{\\overline{x}} = 10 \\quad \\quad \\sigma_{\\overline{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{" + String(popSigma) + "}{\\sqrt{" + String(n) + "}} = " + sampleSigma.toFixed(3) + "\\) <br><br>" + 
+        plan.innerHTML = planTitle + "Declaring Variables: <br>" + "&emsp;\\(\\overline{x} = \\text{[insert context here]} \\quad \\quad \\mu_{\\overline{x}} = 10 \\quad \\quad \\sigma_{\\overline{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{" + String(popSigma) + "}{\\sqrt{" + String(n) + "}} = " + sampleSigma.toFixed(3) + "\\) <br><br>" + 
                             "Checking Conditions: <br>" + 
-                            "1. If not stated, we need to assume the sample is chosen randomly <br>" + 
-                            "2. The sample is " + ((n >= 30) ? "" : "not ") + "large enough to meet the Central Limit Theorem <br>" + 
-                            "3. The population has to be greater than " + String(10 * n) + " (if the problem does not explicitly state the population, make an assumption. <br>";
+                            "&emsp;1. If not stated, we need to assume the sample is chosen randomly <br>" + 
+                            "&emsp;2. The sample is " + ((n >= 30) ? "" : "not ") + "large enough to meet the Central Limit Theorem <br>" + 
+                            "&emsp;3. The population has to be greater than " + String(10 * n) + " (if the problem does not explicitly state the population, make an assumption. <br>";
         
         // loads the MathJax
         loadMathJax("plan");
@@ -265,6 +268,79 @@ function calculate() {
         // calculates the parameters
         sampleMu = popProp;
         sampleSigma = Math.sqrt(popProp * (1 - popProp) / n);
+
+        // gets the type of operation being done
+        let operation = document.getElementById("prop-operation").value;
+
+        // makes sure an operation is selected
+        if (operation === "blank") {
+            output.innerHTML = "Please select an operation!";
+            return false;
+        }
+
+        else if (operation === "between") {
+            // gets the bounds
+            let a = evalProbability(document.getElementById("prop-phat-a").value, output);
+            let b = evalProbability(document.getElementById("prop-phat-b").value, output);
+
+            // checks for need to quit
+            if (a === "q" || b === "q") {
+                return false;
+            }
+
+            // makes the lower bound have to be at most the upper bound
+            else if (a > b) {
+                output.innerHTML = "Your upper bound cannot be greater than your lower bound!";
+                return false;
+            }
+
+            // sets the bounds
+            lowerbound = a;
+            upperbound = b;
+
+            // computes the answer
+            let answer = areaUnderNormal(sampleMu, sampleSigma, upperbound) - areaUnderNormal(sampleMu, sampleSigma, lowerbound);
+
+            // prints the output
+            state.innerHTML = stateTitle + "Using a sampling distribution for proportions, we need to figure out the probability " + 
+                                           "that a sample proportion from a sample with size " + String(n) + " from a population with proportion " + 
+                                           String(popProp) + " will be between " + String(a) + 
+                                           " and " + String(b) + ".";
+
+            // prints the "do" part - the calculations 
+            doo.innerHTML = doTitle + "<br>\\(P(" + a + " \\lt \\hat{p} \\lt" + b + ")\\) <br>" + 
+                                      "<br>\\(= P(\\hat{p} \\lt" + String(b) + ") - P(\\hat{p} \\lt" + String(a) + ")\\)<br>" +
+                                      "<br>\\(= P(z < \\frac{" + String(upperbound) + " - \\mu_{\\hat{p}}}{\\sigma_{\\hat{p}}}) - " + 
+                                      "P(z < \\frac{" + String(lowerbound) + " - \\mu_{\\hat{p}}}{\\sigma_{\\hat{p}}})\\)<br>" + 
+                                      "<br>\\(= P(z < \\frac{" + String(upperbound) + " - " + String(sampleMu) + "}{" + sampleSigma.toFixed(3) + "}) - " + 
+                                      "P(z < \\frac{" + String(lowerbound) + " - " + String(sampleMu) + "}{" + sampleSigma.toFixed(3) + "})\\)<br>" +
+                                      "<br>\\(= " + answer.toFixed(3) + "\\)";
+
+            // loads the MathJAX
+            loadMathJax("do");
+
+            // fills in the conclude section
+            conclude.innerHTML = concludeTitle + "Therefore, we can conclude that the probability that a sample will have a proportion between " + String(a) + " and " + String(b) + " is equal to " + answer.toFixed(3) + ".";
+
+        }
+        else {
+
+        }
+
+        // calculates whether the large counts condition is met
+        let largeCounts = n * sampleMu >= 10 && n * (1-sampleMu) >= 10;
+
+        plan.innerHTML = planTitle + "Declaring Variables: <br>" + "&emsp;\\(\\hat{p} = \\text{[insert context here]} \\quad \\quad " +
+                                                                   "\\mu_{\\hat{p}} = p = " + String(sampleMu) + " \\quad \\quad " + 
+                                                                   "\\sigma_{\\hat{p}} = \\sqrt{\\frac{p(1-p)}{n}} = \\sqrt{\\frac{" + String(sampleMu) + "(1 - " + String(sampleMu) + ")}{" + String(n) + "}} = " + sampleSigma.toFixed(3) + "\\)<br><br>" + 
+                                     "Checking Conditions: <br>" + "&emsp;1. We assume the sample was taken randomly, if not explicitly stated<br>" + 
+                                                                   "&emsp;2. We assume the population size is larger than " + String(10 * n) + "<br>" + 
+                                                                   "&emsp;3. We need to check the Large Counts Condition: <br>" + "&emsp;&emsp;\\(np \\ge 10 \\quad \\quad " + String(n) + "\\cdot" + sampleMu.toFixed(3) + " \\ge 10 \\quad \\quad " + (n * sampleMu).toFixed(3) + "\\ge 10\\)<br>" + 
+                                                                                                                            "&emsp;&emsp;\\(n(1-p) \\ge 10 \\quad \\quad " + String(n) + "\\cdot" + (1-sampleMu).toFixed(3) + " \\ge 10 \\quad \\quad " + (n * (1 - sampleMu)).toFixed(3) + "\\ge 10\\)<br>" + 
+                                                                      "&emsp;&emsp;The condition is " + (largeCounts ? "" : "not ") + "met.";
+
+        // loads the MathJax
+        loadMathJax("plan");
     }
 
     // plots the graph
@@ -328,7 +404,7 @@ function plotGraphs(mu, sigma, container, lowerB, upperB) {
     var layout = {
         title: "Visualization On a Normal Curve",
         yaxis: {
-            title: "Probability"
+            showticklabels: false
         },
         showlegend: false
     };  
