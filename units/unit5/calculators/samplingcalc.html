@@ -7,9 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="/style.css" rel="stylesheet">
     <script src = "scripts/samplingcalc.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src = "/script.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
-    <script src='https://cdn.jsdelivr.net/gh/AlexSp3/Basenumber.js@main/BaseNumber.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src='https://unpkg.com/simple-statistics@7.8.0/dist/simple-statistics.min.js'></script>
     <style>
@@ -87,8 +88,8 @@
           <div class="col">
             <select id = "prop-operation" class="form-select" aria-label="Default select example" onchange = "propChange(); return false;">
               <option selected value="blank">Select the operation</option>
-              <option value="prop">P(p-hat > a)</option>
-              <option value="mean">P(p-hat < a)</option>
+              <option value="greater">P(p-hat > a)</option>
+              <option value="less">P(p-hat < a)</option>
               <option value="between">P(a < p-hat < b)</option>
             </select>
           </div>
@@ -116,8 +117,8 @@
           <div class="col">
             <select id = "mean-operation" class="form-select" aria-label="Default select example" onchange = "meanChange(); return false;">
               <option selected value="blank">Select the operation</option>
-              <option value="prop">P(x-bar > a)</option>
-              <option value="mean">P(x-bar < a)</option>
+              <option value="greater">P(x-bar > a)</option>
+              <option value="less">P(x-bar < a)</option>
               <option value="between">P(a < x-bar < b)</option>
             </select>
           </div>
@@ -130,20 +131,21 @@
     <div class = "notes" id = "output" style = "font-size: 25px; text-align: center">
     
     </div>
-      
-    <div style = "margin: 50px; width: 40vw; height: auto" id="container"></div>
 
     <div class = "notes">
       <div id = "state"></div>
       <br>
       <div id = "plan"></div>
       <br>
-      <div>
-        <div id = "do"></div>
-        <span id = "container" style = "display: inline-block; margin: 50px; width: 40wv; height: auto"></span>
+      <div class = "row">
+        <div class = "column" id = "container" style = "width: 35wv; height: auto"></div>
+        <div class = "column" id = "do"></div>
       </div>
       <br>
       <div id = "conclude"></div>
     </div>
+
+    <hr class = "bottomborder">
+
   </body>
 </html>
