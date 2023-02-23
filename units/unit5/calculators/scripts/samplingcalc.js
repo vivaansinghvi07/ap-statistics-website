@@ -108,6 +108,10 @@ function calculate() {
     var container = document.getElementById("container");
     container.innerHTML = null;
 
+    // hides the border
+    var border = document.querySelector("#bottomborder");
+    border.setAttribute("hidden", "hidden");
+
     // gets the type of variabl 
     var type = document.getElementById("type").value;
 
@@ -117,7 +121,13 @@ function calculate() {
     // initializes values for the bounds
     var lowerbound, upperbound;
 
-    if (type === "mean") {
+    // makes sure a type is selected
+    if (type === "blank") {
+        output.innerHTML = "Please select a variable type!";
+        return false;
+    }
+
+    else if (type === "mean") {
         // gets input 
         let popMu = evalNumber(document.getElementById("mean-mu").value, output);
         let popSigma = evalNumber(document.getElementById("mean-sigma").value, output);
@@ -134,8 +144,15 @@ function calculate() {
 
         // gets the type of operation being done
         let operation = document.getElementById("mean-operation").value;
+
+        // makes sure an operation is selected
+        if (operation === "blank") {
+            output.innerHTML = "Please select an operation!";
+            return false;
+        }
         
-        if (operation === "between") { 
+        
+        else if (operation === "between") { 
             // gets the bounds
             a = evalNumber(document.getElementById("mean-xbar-a").value, output);
             b = evalNumber(document.getElementById("mean-xbar-b").value, output);
@@ -180,6 +197,7 @@ function calculate() {
             "the probability that a sample of size " + String(n) + " will have a mean value between " + String(lowerbound) + " and " + String(upperbound) + " units is " + answer.toFixed(3) + ".";
             
         }
+
         else {
             // gets the bound
             a = evalNumber(document.getElementById("mean-xbar-a").value, output);
@@ -251,8 +269,6 @@ function calculate() {
 
     // plots the graph
     plotGraphs(sampleMu, sampleSigma, container, lowerbound, upperbound);
-    
-
 
 }
 
