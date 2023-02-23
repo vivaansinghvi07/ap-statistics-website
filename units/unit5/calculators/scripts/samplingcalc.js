@@ -3,18 +3,6 @@ var planTitle = "<div style=\"font-size: 28px;\">Plan:</div>";
 var doTitle = "<div style=\"font-size: 28px;\">Do:</div>";
 var concludeTitle = "<div style=\"font-size: 28px;\">Conclude:</div>";
 
-
-// defines a function that calcuates the normal probability of something, for the graph. Source: https://en.wikipedia.org/wiki/Normal_distribution#Cumulative_distribution_function
-function normalFunction(mu, sigma, x) {
-    return (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * (((x-mu) / sigma)**2));
-}
-
-// defines a function that is the area of a normal curve
-function areaUnderNormal(mu, sigma, x) {
-    let inp = (x - mu) / (sigma * Math.sqrt(2));
-    return ss.errorFunction(inp) / 2 + 0.5;
-}
-
 function change() {
     // gets the type of variable being analyzed
     var type = document.getElementById("type").value;
