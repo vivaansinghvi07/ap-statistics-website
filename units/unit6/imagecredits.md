@@ -1,0 +1,2 @@
+# Image Credits for Unit 6:
+- [Confidence Intervals](https://www.google.com/url?sa=i&url=https%3A%2F%2Fnulib.github.io%2Fmoderndive_book%2F10-CIs.html&psig=AOvVaw0UT5hbaYfQtcCaVvMwMMlk&ust=1677338302929000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjQl8Sguq79AhUAAAAAHQAAAAAQAw)
