@@ -43,3 +43,11 @@ html, body {
 .bottomborder {
   margin: 50px 0px;
 }
+.notelink {
+  text-decoration: underline;
+  color: black;
+}
+.notelink:hover {
+  color: rgb(6, 121, 228);
+  text-decoration: underline;
+}
