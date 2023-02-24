@@ -70,6 +70,7 @@ function evalNumber(str, output) {
     }
 }
 
+// function to plot graphs that has a normal curve, and area filled under it representing something you're calculating
 function plotNormalGraphs(mu, sigma, container, lowerB, upperB) {
 
     // defines bounds for the graph
