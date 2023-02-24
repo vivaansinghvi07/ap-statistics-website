@@ -42,7 +42,7 @@ function change() {
     fetch("/units/unit5/calculators/datasets/" + filename)
     .then(response => response.text())
     .then(data => {
-		
+
       // copies the data onto the dataset variable
       dataset = data.split(/[\s\n]+/).map(parseFloat);
       
@@ -54,6 +54,7 @@ function change() {
 
 }
 
+// displays graphs for both the population and the sampling distribution
 function displayGraph(type, container, data) {
     // declares bounds and steps for the graph based on the type being analyzed
     var graphSettings;
@@ -67,7 +68,7 @@ function displayGraph(type, container, data) {
       graphSettings = [0, 1, 0.1];
     }
 
-	// deals with if the sample is being used - we want smaller bins
+	// deals with if the sample is being used - we want smaller bins (checks if the object reference passed in is an alias of "samples"
 	if (data === samples) {
 		graphSettings[2] = 1 / (10 * Math.log10(samples.size));
 	}
@@ -120,6 +121,7 @@ function calculate() {
 
 	// declares the container where sample data goes
 	var container2 = document.getElementById("container2");
+	container2.innerHTML = null;
 
 	// checks to see if there is a value left blank
 	if (!n || !count) {
