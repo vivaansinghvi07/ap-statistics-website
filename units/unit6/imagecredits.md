@@ -1,2 +1,3 @@
 # Image Credits for Unit 6:
 - [Confidence Intervals](https://www.google.com/url?sa=i&url=https%3A%2F%2Fnulib.github.io%2Fmoderndive_book%2F10-CIs.html&psig=AOvVaw0UT5hbaYfQtcCaVvMwMMlk&ust=1677338302929000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjQl8Sguq79AhUAAAAAHQAAAAAQAw)
+- [Diagram of Confidence Interval Showing Tails](https://www.google.com/url?sa=i&url=https%3A%2F%2Fanalystprep.com%2Fcfa-level-1-exam%2Fquantitative-methods%2Fconfidence-intervals-2%2F&psig=AOvVaw0wIeAXPxC3byk_L5SYiq0M&ust=1677357894634000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjYi7ueg6_9AhUAAAAAHQAAAAAQEQ)

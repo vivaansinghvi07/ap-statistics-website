@@ -43,11 +43,80 @@
     </nav>
 
     <header class = "title">
-      Introduction to Confidence Intervals
+      Confidence Intervals for Proportions
     </header>
     <hr>
     
-    
+    <ul class = "notes">
+        <li>When constructing a confidence interval for a proportion, you must check the <strong>conditions for inference</strong>
+            <ul >
+                <li>These are the same conditions as earlier:
+                    <ol  style="list-style-type: decimal;">
+                        <li>The sample must be randomly selected</li>
+                        <li>The population must be more than 10 times the sample size (\(N \ge 10n)\)
+                            <ul style="list-style-type: disc;">
+                                <li>If this condition is violated, the calculated standard deviation will be higher than what it really is, creating confidence intervals that are wider than what they need to be</li>
+                            </ul>
+                        </li>
+                        <li>The&nbsp;<strong>Large Counts Condition </strong>must be met:
+                            <ul style="list-style-type: disc;">
+                                <li>\(n\hat{p} \ge 10\)</li>
+                                <li>\(n(1 - \hat{p}) \ge 10\)</li>
+                                <li>This is essentially saying that the number of successes and the number of failures must be greater than or equal to 10</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li>&nbsp;If these are met, your calculations are essentially statistically valid</li>
+            </ul>
+        </li>
+        <li>The point estimate of the population proportion \(p\) is simply the sample proportion, \(\hat{p}\)
+            <ul >
+                <li>The standard deviation will be \(\sqrt{\frac{p(1 - p)}{n}}\)
+                    <ul >
+                        <li>However, since this will be unknown when making a confidence interval, we need to use a different value</li>
+                        <li>We use the&nbsp;<strong>standard error of the statistic</strong>, which is \(SE_\hat{p} = \sqrt{\frac{\hat{p} (1 - \hat{p})}{n}}\)
+                            <ul >
+                                <li>Same thing as standard deviation, just use \(\hat{p}\) instead of \(p\)</li>
+                                <li>We call it standard error when the value comes from the statistic</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>To find the critical value, you can use a normal curve
+            <ul >
+                <li>When you visualize a confidence interval, the parts that are not filled in, the <strong>tails,&nbsp;</strong>will be outside of the area designated by the confidence level
+                    <ul >
+                        <li>Therefore, when the confidence level is 95%, one of the tails will have an area of 2.5%, as both tails and the body combined make 100%</li>
+                    </ul>
+                </li>
+                <li><img class = "image" src = "../imgs/tail.png"></li>
+                <li>Since the confidence interval will encompass all values within \(z\) standard deviations of the mean, you can simply find the value of \(z^*\) that allows you to be that many standard deviations away
+                    <ul >
+                        <li>Since the&nbsp;<strong>empirical rule</strong> states that about 95% of the data on a normal curve are within about 2 standard deviations from the mean, your critical value would be 2.</li>
+                        <li>To find it with a calculator, you can use the function <strong>invNorm</strong><strong>(\(\mathbf{a}\), 0, 1)</strong>, where \(a\) is the area under one tail
+                            <ul >
+                                <li>Since \(a\) represents the area under one tail, it is equal to \(\frac{1 - c}{2}\), where \(c\) is the confidence level, given as a number between 0 and 1</li>
+                                <li>This will return the negative version of your critical value; since you are doing a plus or minus operation, it doesn't really matter if you use the negative or positive</li>
+                                <li>0 is \(\mu\): the mean of the <strong>standard normal distribution</strong>
+                                    <ul >
+                                        <li>1 is its standard deviation</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Therefore, the confidence interval to estimate a population proportion can be written as: $$ \text{interval} = \hat{p} \pm z^* \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}} $$
+            <ul >
+                <li>\(n\) represents the sample size, \(\hat{p}\) represents the sample proportion, and \(z^*\) represents the critical value</li>
+            </ul>
+        </li>
+    </ul>
     
     
     <hr class = "bottomborder">
