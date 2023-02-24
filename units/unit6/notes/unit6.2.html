@@ -96,7 +96,7 @@
                 <li>Since the confidence interval will encompass all values within \(z\) standard deviations of the mean, you can simply find the value of \(z^*\) that allows you to be that many standard deviations away
                     <ul >
                         <li>Since the&nbsp;<strong>empirical rule</strong> states that about 95% of the data on a normal curve are within about 2 standard deviations from the mean, your critical value would be 2.</li>
-                        <li>To find it with a calculator, you can use the function <strong>invNorm</strong><strong>(\(\mathbf{a}\), 0, 1)</strong>, where \(a\) is the area under one tail
+                        <li>To find it with a calculator, you can use the function <strong>invNorm</strong><strong>(area: \(a\), \(\mu\): 0, \(\sigma\): 1)</strong>, where \(a\) is the area under one tail
                             <ul >
                                 <li>Since \(a\) represents the area under one tail, it is equal to \(\frac{1 - c}{2}\), where \(c\) is the confidence level, given as a number between 0 and 1</li>
                                 <li>This will return the negative version of your critical value; since you are doing a plus or minus operation, it doesn't really matter if you use the negative or positive</li>
@@ -114,6 +114,28 @@
         <li>Therefore, the confidence interval to estimate a population proportion can be written as: $$ \text{interval} = \hat{p} \pm z^* \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}} $$
             <ul >
                 <li>\(n\) represents the sample size, \(\hat{p}\) represents the sample proportion, and \(z^*\) represents the critical value</li>
+            </ul>
+        </li>
+        <li>There are also situations in which you need to find what confidence level or sample size will give you a certain margin of error
+            <ul>
+                <li>In this case, you can simply set up an equation: $$ \text{margin of error} = z^* \cdot \sqrt{\frac{\hat{p} ( 1 - \hat{p})}{n}} $$</li>
+                <li>Then, just plug in your known values and solve
+                    <ul>
+                        <li>If solving for the confidence level, solve for the critical value you need, and plug its negative into a <strong>normcdf</strong> function with mean 0 and standard deviation 1
+                            <ul>
+                                <li>
+                                  \(a\) = normcdf(value: \(z^*\), \(\mu\): 0, \(\sigma\): 1); \(a\) is the area of one tail
+                                </li>
+                            </ul>
+                        </li>
+                        <li>It will output the area of the normal curve that is less than the critical value, which represents one tail
+                            <ul>
+                                <li>To find the confidence level with just one value of the tail, multiply the area of the tail by two and subtract it from 1</li>
+                                <li>If the tail's area is \(a\), you can do \(1 - 2a = c\), where \(c\) is the confidence level as a number between 0 and 1</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>
