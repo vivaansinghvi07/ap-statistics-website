@@ -20,7 +20,12 @@ html, body {
   margin-left: 60px;
 }
 .pagelink {
+  text-decoration: none;
   color: #000000;
+}
+.pagelink:hover {
+  color: rgb(6, 121, 228);
+  text-decoration: underline;
 }
 .image {
   max-height: 15vw;
