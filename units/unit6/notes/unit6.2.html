@@ -72,13 +72,14 @@
         </li>
         <li>The point estimate of the population proportion \(p\) is simply the sample proportion, \(\hat{p}\)
             <ul >
-                <li>The standard deviation will be \(\sqrt{\frac{p(1 - p)}{n}}\)
+                <li>The standard deviation of the sampling distribution will be \(\sqrt{\frac{p(1 - p)}{n}}\)
                     <ul >
                         <li>However, since this will be unknown when making a confidence interval, we need to use a different value</li>
                         <li>We use the&nbsp;<strong>standard error of the statistic</strong>, which is \(SE_\hat{p} = \sqrt{\frac{\hat{p} (1 - \hat{p})}{n}}\)
                             <ul >
                                 <li>Same thing as standard deviation, just use \(\hat{p}\) instead of \(p\)</li>
                                 <li>We call it standard error when the value comes from the statistic</li>
+                                <li>Additionally, the standard error of the statistic refers to the approximate standard deviation of the sampling distribution</li>
                             </ul>
                         </li>
                     </ul>
@@ -114,6 +115,7 @@
         <li>Therefore, the confidence interval to estimate a population proportion can be written as: $$ \text{interval} = \hat{p} \pm z^* \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}} $$
             <ul >
                 <li>\(n\) represents the sample size, \(\hat{p}\) represents the sample proportion, and \(z^*\) represents the critical value</li>
+                <li>The process used to find this is called the <strong>one-sample z-interval</strong></li>
             </ul>
         </li>
         <li>There are also situations in which you need to find what confidence level or sample size will give you a certain margin of error
