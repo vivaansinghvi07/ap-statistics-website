@@ -71,6 +71,13 @@ function evalNumber(str, output) {
 }
 
 // function to plot graphs that has a normal curve, and area filled under it representing something you're calculating
+/* 
+    DETAILS:
+    - lowerB and upperB are the bounds of the area
+        - enter as their normal values - no need to change anything
+    - mu and sigma are simply the parameters of the normal curve
+    - the container is the html element where the graph goes
+*/
 function plotNormalGraphs(mu, sigma, container, lowerB, upperB) {
 
     // defines bounds for the graph
