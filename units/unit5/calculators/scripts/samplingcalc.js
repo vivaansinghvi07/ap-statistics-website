@@ -4,7 +4,12 @@ const doTitle = "<div style=\"font-size: 28px;\">Do:</div>";
 const concludeTitle = "<div style=\"font-size: 28px;\">Conclude:</div>";
 
 function change() {
+    // see script.js for documentation
     changeSettings(["prop", "mean"]);
+    clearIDS(["state", "plan", "do", "conclude", "container"]);
+
+    // hides the border
+    document.getElementById("border").setAttribute("hidden", "hidden");
 }
 
 // adds the upper bound for the proportions
