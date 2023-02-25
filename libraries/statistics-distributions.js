@@ -85,7 +85,7 @@
  * Artistic License or the GPL v1 or later.
  */
 
-var SIGNIFICANT = 5; // number of significant digits to be returned
+var SIGNIFICANT = 8; // number of significant digits to be returned
 
 function chisqrdistr ($n, $p) {
 	if ($n <= 0 || Math.abs($n) - Math.abs(integer($n)) != 0) {
