@@ -1,0 +1,8 @@
+- credit stats textbook
+- mention image credits
+- credit simplestatistics
+- credit mathjax
+- credit anychart
+- credit plotly
+- credit canvas text editor for easy html use
+- credit @benrasmusen for his library
