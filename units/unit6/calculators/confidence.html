@@ -60,67 +60,41 @@
     </header>
     <hr>
 
-    <div style = "text-align: center" class = "notes">When analyzing proportions, please enter your sample proportion as a number frmo 0 to 1. Fractions are accepted, so you can fill in the values of X/n (representing \(\frac{X}{n}\)) in the input if you only have the number of successes \(X\).</div>
+    <div style = "text-align: center" class = "notes">When analyzing proportions, please enter your sample proportion as a number frmo 0 to 1. Fractions are accepted, so you can fill in the values of X/n (representing \(\frac{X}{n}\)) in the input if you only have the number of successes \(X\). Please enter the confidence level as a decimal between 0 and 1 rather than a percent.</div>
     <hr>
 
     <form action = "" class = "data-inp">
       <select id = "type" class="form-select" aria-label="Default select example" onchange = "change(); return false;">
-        <option selected value="blank">Select the type of variable you are analyzing</option>
+        <option selected value="blank">Select the type of variable you want a confidence interval of</option>
         <option value="prop">Sample Proportion</option>
         <option value="mean">Sample Mean</option>
       </select>
       <div hidden = "hidden" id = "prop-settings">
         <div class="row g-3" style = "margin-top: 18px;">
           <div class="col">
-            <input type="text" class="form-control" id = "prop-p" placeholder="Population Proportion" aria-label= "Population Proportion">
+            <input type="text" class="form-control" id = "prop-p" placeholder="Sample Proportion" aria-label= "Population Proportion">
           </div>
           <div class="col">
             <input type="text" class="form-control" id = "prop-n" placeholder="Sample Size" aria-label="Sample Size">
           </div>
-        </div>
-        <div class="row g-3" style = "margin-top: 18px;">
           <div class="col">
-            <input type="text" class="form-control" id = "prop-phat-a" placeholder="Sample Proportion (a)" aria-label="Sample Proportion">
-          </div>
-          <div hidden = "hidden" class="col" id = "prop-extra-settings">
-            <input type="text" class="form-control" id = "prop-phat-b" placeholder="Upper Bound (b)" aria-label="Sample Proportion Upper Bound">
-          </div>
-          <div class="col">
-            <select id = "prop-operation" class="form-select" aria-label="Default select example" onchange = "propChange(); return false;">
-              <option selected value="blank">Select the operation</option>
-              <option value="greater">P(p-hat > a)</option>
-              <option value="less">P(p-hat < a)</option>
-              <option value="between">P(a < p-hat < b)</option>
-            </select>
+            <input type="text" class="form-control" id = "prop-c" placeholder="Confidence Level" aria-label="Confidence Level">
           </div>
         </div>
       </div>
       <div hidden = "hidden" id = "mean-settings">
         <div class="row g-3" style = "margin-top: 18px;">
           <div class="col">
-            <input type="text" class="form-control" id = "mean-mu" placeholder="Population Mean" aria-label="Population Mean">
+            <input type="text" class="form-control" id = "mean-mu" placeholder="Sample Mean" aria-label="Population Mean">
           </div>
           <div class="col">
-            <input type="text" class="form-control" id = "mean-sigma" placeholder="Population Standard Deviation" aria-label="Population Standard Deviation">
+            <input type="text" class="form-control" id = "mean-sigma" placeholder="Sample Standard Deviation" aria-label="Population Standard Deviation">
           </div>
           <div class="col">
             <input type="text" class="form-control" id = "mean-n" placeholder="Sample Size" aria-label="Sample Mean">
           </div>
-        </div>
-        <div class = "row g-3" style = "margin-top: 18px;">
           <div class="col">
-            <input type="text" class="form-control" id = "mean-xbar-a" placeholder="Sample Mean (a)" aria-label="Sample Mean">
-          </div>
-          <div class="col" hidden="hidden" id = "mean-extra-settings">
-            <input type="text" class="form-control" id = "mean-xbar-b" placeholder="Upper Bound (b)" aria-label="Sample Mean Upper Bound">
-          </div>
-          <div class="col">
-            <select id = "mean-operation" class="form-select" aria-label="Default select example" onchange = "meanChange(); return false;">
-              <option selected value="blank">Select the operation</option>
-              <option value="greater">P(x-bar > a)</option>
-              <option value="less">P(x-bar < a)</option>
-              <option value="between">P(a < x-bar < b)</option>
-            </select>
+            <input type="text" class="form-control" id = "mean-c" placeholder="Confidence Level" aria-label="Confidence Level">
           </div>
         </div>
       </div>
