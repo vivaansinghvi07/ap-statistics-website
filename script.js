@@ -132,7 +132,7 @@ function plotNormalGraphs(mu, sigma, container, lowerB, upperB) {
 
     // layout for graph
     var layout = {
-        title: "Visualization On a Normal Curve",
+        title: "Visualization On A Curve",
         yaxis: {
             showticklabels: false
         },
@@ -196,3 +196,10 @@ function changeSettings (types) {
         }
     });
 } 
+
+// clears the IDS of any inputted HTMLs - input must be an array
+function clearIDS(ids) {
+    ids.forEach((id) => {
+        document.getElementById(id).innerHTML = null;
+    });
+}
