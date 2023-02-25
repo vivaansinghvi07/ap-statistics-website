@@ -152,7 +152,7 @@ function calculate() {
         state.innerHTML = stateTitle + "We will be using a one-sample t-interval to determine a " + String(c*100) + "% confidence interval for the [insert context here]";
 
         // prints the plan part
-        plan.innerHTML = planTitle + "Declaring Variables: <br>" + "&emsp;\\(\\overline{x} = \\text{[insert context here]} \\quad \\quad \\mu_{\\overline{x}} \\approx \\overline{x} = " + String(mu) + " \\quad \\quad \\sigma_{\\overline{x}} \\approx \\frac{\\s_x}{\\sqrt{n}} = \\frac{" + String(s) + "}{\\sqrt{" + String(n) + "}} = " + sigma.toFixed(3) + "\\) <br><br>" +
+        plan.innerHTML = planTitle + "Declaring Variables: <br>" + "&emsp;\\(\\overline{x} = \\text{[insert context here]} \\quad \\quad \\mu_{\\overline{x}} \\approx \\overline{x} = " + String(mu) + " \\quad \\quad \\sigma_{\\overline{x}} \\approx \\frac{s_x}{\\sqrt{n}} = \\frac{" + String(s) + "}{\\sqrt{" + String(n) + "}} = " + sigma.toFixed(3) + "\\) <br><br>" +
                                      "Checking Conditions: <br>" + "&emsp;1. The sample must be randomly chosen<br>" + 
                                                                    "&emsp;2. We assume the population size is greater than " + String(n * 10) + " (ten times the sample size)<br>" +
                                                                    "&emsp;3. The sample size is " + (n >= 30 ? "" : "not ") + "large enough to meet the Central Limit Theorem (must be at least 30)<br>";
