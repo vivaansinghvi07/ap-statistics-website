@@ -214,11 +214,11 @@ function calculate() {
         }
 
         // fills the plan section
-        plan.innerHTML = planTitle + "Declaring Variables: <br>" + "&emsp;\\(\\overline{x} = \\text{[insert context here]} \\quad \\quad \\mu_{\\overline{x}} = 10 \\quad \\quad \\sigma_{\\overline{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{" + String(popSigma) + "}{\\sqrt{" + String(n) + "}} = " + sampleSigma.toFixed(3) + "\\) <br><br>" + 
+        plan.innerHTML = planTitle + "Declaring Variables: <br>" + "&emsp;\\(\\overline{x} = \\text{[insert context here]} \\quad \\quad \\mu_{\\overline{x}} = " + String(popMu) + " \\quad \\quad \\sigma_{\\overline{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{" + String(popSigma) + "}{\\sqrt{" + String(n) + "}} = " + sampleSigma.toFixed(3) + "\\) <br><br>" + 
                             "Checking Conditions: <br>" + 
                             "&emsp;1. If not stated, we need to assume the sample is chosen randomly <br>" + 
-                            "&emsp;2. The sample is " + ((n >= 30) ? "" : "not ") + "large enough to meet the Central Limit Theorem <br>" + 
-                            "&emsp;3. The population has to be greater than " + String(10 * n) + " (if the problem does not explicitly state the population, make an assumption. <br>";
+                            "&emsp;2. The sample is " + ((n >= 30) ? "" : "not ") + "large enough to meet the Central Limit Theorem (must be at least 30) <br>" + 
+                            "&emsp;3. The population has to be greater than " + String(10 * n) + " (ten times the sample size) - if the problem does not explicitly state the population, make an assumption. <br>";
         
         // loads the MathJax
         loadMathJax("plan");
@@ -273,7 +273,7 @@ function calculate() {
             // prints the output
             state.innerHTML = stateTitle + "Using a sampling distribution for proportions, we need to figure out the probability " + 
                                            "that a sample proportion from a sample with size " + String(n) + " from a population with proportion " + 
-                                           String(popProp) + " will be between " + String(a) + 
+                                           popProp.toFixed(3) + " will be between " + String(a) + 
                                            " and " + String(b) + ".";
 
             // prints the "do" part - the calculations 
@@ -281,8 +281,8 @@ function calculate() {
                                       "<br>\\(= P(\\hat{p} \\lt" + String(b) + ") - P(\\hat{p} \\lt" + String(a) + ")\\)<br>" +
                                       "<br>\\(= P(z < \\frac{" + String(upperbound) + " - \\mu_{\\hat{p}}}{\\sigma_{\\hat{p}}}) - " + 
                                       "P(z < \\frac{" + String(lowerbound) + " - \\mu_{\\hat{p}}}{\\sigma_{\\hat{p}}})\\)<br>" + 
-                                      "<br>\\(= P(z < \\frac{" + String(upperbound) + " - " + String(sampleMu) + "}{" + sampleSigma.toFixed(3) + "}) - " + 
-                                      "P(z < \\frac{" + String(lowerbound) + " - " + String(sampleMu) + "}{" + sampleSigma.toFixed(3) + "})\\)<br>" +
+                                      "<br>\\(= P(z < \\frac{" + String(upperbound) + " - " + sampleMu.toFixed(3) + "}{" + sampleSigma.toFixed(3) + "}) - " + 
+                                      "P(z < \\frac{" + String(lowerbound) + " - " + sampleMu.toFixed(3) + "}{" + sampleSigma.toFixed(3) + "})\\)<br>" +
                                       "<br>\\(= " + answer.toFixed(3) + "\\)";
 
             // loads the MathJAX
@@ -318,7 +318,7 @@ function calculate() {
 
             // fills in the answer
             state.innerHTML = stateTitle + "Using a sampling distribution for proportions, we need to calculate the probability that a sample proportion " + 
-            "from a sample size of " + String(n) + " will be " + operation + " than " + String(a) + " given the population proportion " + String(popProp) + ".";
+            "from a sample size of " + String(n) + " will be " + operation + " than " + String(a) + " given the population proportion " + popProp.toFixed(3) + ".";
 
             // gets the string to use in latex depending on what the operation is
             let operationString = (operation === "greater" ? "\\gt" : "\\lt");
@@ -326,7 +326,7 @@ function calculate() {
             // fills in the process
             doo.innerHTML = doTitle + "<br> \\(P(\\hat{p} " + operationString + String(a) + ")\\)<br>" + 
                                        "<br> \\(= P(z " + operationString + " \\frac{" + String(a) + " - \\mu_{\\hat{p}}}{\\sigma_{\\hat{p}}})\\)<br>" +
-                                       "<br> \\(= P(z " + operationString + " \\frac{" + String(a) + " - " + String(sampleMu) + "}{" + sampleSigma.toFixed(3) + "})\\)<br>" + 
+                                       "<br> \\(= P(z " + operationString + " \\frac{" + String(a) + " - " + sampleMu.toFixed(3) + "}{" + sampleSigma.toFixed(3) + "})\\)<br>" + 
                                        "<br> \\(= " + answer.toFixed(3) + "\\)";
 
             //loads the MathJax
@@ -342,8 +342,8 @@ function calculate() {
         let largeCounts = n * sampleMu >= 10 && n * (1-sampleMu) >= 10;
 
         plan.innerHTML = planTitle + "Declaring Variables: <br>" + "&emsp;\\(\\hat{p} = \\text{[insert context here]} \\quad \\quad " +
-                                                                   "\\mu_{\\hat{p}} = p = " + String(sampleMu) + " \\quad \\quad " + 
-                                                                   "\\sigma_{\\hat{p}} = \\sqrt{\\frac{p(1-p)}{n}} = \\sqrt{\\frac{" + String(sampleMu) + "(1 - " + String(sampleMu) + ")}{" + String(n) + "}} = " + sampleSigma.toFixed(3) + "\\)<br><br>" + 
+                                                                   "\\mu_{\\hat{p}} = p = " + sampleMu.toFixed(3) + " \\quad \\quad " + 
+                                                                   "\\sigma_{\\hat{p}} = \\sqrt{\\frac{p(1-p)}{n}} = \\sqrt{\\frac{" + sampleMu.toFixed(3) + "(1 - " + sampleMu.toFixed(3) + ")}{" + String(n) + "}} = " + sampleSigma.toFixed(3) + "\\)<br><br>" + 
                                      "Checking Conditions: <br>" + "&emsp;1. We assume the sample was taken randomly, if not explicitly stated<br>" + 
                                                                    "&emsp;2. We assume the population size is larger than " + String(10 * n) + "<br>" + 
                                                                    "&emsp;3. We need to check the Large Counts Condition: <br>" + "&emsp;&emsp;\\(np \\ge 10 \\quad \\quad " + String(n) + "\\cdot" + sampleMu.toFixed(3) + " \\ge 10 \\quad \\quad " + (n * sampleMu).toFixed(3) + "\\ge 10\\)<br>" + 
