@@ -4,32 +4,7 @@ const doTitle = "<div style=\"font-size: 28px;\">Do:</div>";
 const concludeTitle = "<div style=\"font-size: 28px;\">Conclude:</div>";
 
 function change() {
-    // gets the type of variable being analyzed
-    var type = document.getElementById("type").value;
-    
-    // gets the index of the setting to show
-    var index = ["mean", "prop"].findIndex((item) => {
-        if (item === type) {
-            return true;
-        }
-    });
-
-    // settings pages for the mean and proportion tests
-    var meanSettings = document.getElementById("mean-settings");
-    var propSettings = document.getElementById("prop-settings");
-
-    // creates an array of settings
-    var settings = [meanSettings, propSettings];
-
-    // goes through each setting and only unhiding the one that is chosen by the type
-    settings.forEach((setting, i) => {
-        if (i === index) {
-            setting.removeAttribute("hidden");
-        }
-        else {
-            setting.setAttribute("hidden", "hidden")
-        }
-    });
+    changeSettings(["prop", "mean"]);
 }
 
 // adds the upper bound for the proportions

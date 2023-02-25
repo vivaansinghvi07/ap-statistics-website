@@ -151,3 +151,41 @@ function areaUnderNormal(mu, sigma, x) {
     let inp = (x - mu) / (sigma * Math.sqrt(2));
     return ss.errorFunction(inp) / 2 + 0.5;
 }
+
+// defines a function that hides and shows settings based on the inputted settings list
+/*
+    REQUIREMENTS:
+    - There must be a select bar with id "type" that has options for the settings pages
+    - The settings pages must have an id in the form of "<type>-settings"
+    - You must input an array of types that are all valid type values on the page
+    - Each type in the array must correlate to a <type> in the settings page id
+*/
+function changeSettings (types) {
+    // gets the type of interval to run
+    var type = document.getElementById("type").value;
+
+    // creates an array for the settings
+    var settings = new Array();
+
+    // fills the array with html elements
+    for (let i = 0; i < types.length; i++) {
+        settings.push(document.getElementById(types[i] + "-settings"));
+    }
+
+    // gets the index to skip
+    var index = types.findIndex((t) => {
+        if (t === type) {
+            return true;
+        }
+    });
+
+    // goes through the settings array and displaying if needed
+    settings.forEach((element, i) => {
+        if (i === index) {
+            element.removeAttribute("hidden");
+        }
+        else {
+            element.setAttribute("hidden", "hidden");
+        }
+    });
+} 
