@@ -1,5 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/notes.php' ?>
-<?php startblock('unit') ?>Unit 4 Notes
+<?php startblock('unit') ?>
+Unit 4 Notes
 <?php endblock() ?>
 <?php startblock('title') ?>
       Introduction to Probability
