@@ -1,4 +1,4 @@
-<?php require_once 'ti.php' ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/ti.php' ?>
 <!doctype html>
 <html lang="en">
   <head>
