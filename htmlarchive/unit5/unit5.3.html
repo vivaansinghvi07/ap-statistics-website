@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unit 5 Notes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="../../../style.css" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../../index.html">AP Statistics Helper</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Units
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/units/unit1/unit1.html">Unit 1</a></li>
+                <li><a class="dropdown-item" href="/units/unit2/unit2.html">Unit 2</a></li>
+                <li><a class="dropdown-item" href="/units/unit3/unit3.html">Unit 3</a></li>
+                <li><a class="dropdown-item" href="/units/unit4/unit4.html">Unit 4</a></li>
+                <li><a class="dropdown-item" href="/units/unit5/unit5.html">Unit 5</a></li>
+                <li><a class="dropdown-item" href="/units/unit6/unit6.html">Unit 6</a></li>
+                <li><a class="dropdown-item" href="/units/unit7/unit7.html">Unit 7</a></li>
+                <li><a class="dropdown-item" href="/units/unit8/unit8.html">Unit 8</a></li>
+                <li><a class="dropdown-item" href="/units/unit9/unit9.html">Unit 9</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class = "title">
+      Sample Distributions For Means
+    </header>
+    <hr>
+    
+    <ul class = "notes">
+        <li>A&nbsp;<strong>sample mean</strong>, represented by \(\hat{x}\), is simply the average of a certain value within a sample
+            <ul>
+                <li>The average height of a sample of 5 men</li>
+            </ul>
+        </li>
+        <li>The&nbsp;<strong>sampling distribution&nbsp;</strong>is formed when you take many samples from the population of the same size \(n\), calculate the sample mean, and plot it for each sample
+            <ul>
+                <li>For reference, let's call the population standard deviation \(\sigma\) and the population mean \(\mu\)</li>
+                <li>Similarly to the sample proportion, it also has a few properties which depend on certain conditions
+                    <ul>
+                        <li><strong>Center:</strong> the&nbsp;<strong>mean</strong>&nbsp;of a sampling distribution for a mean is simply equal to the population mean
+                            <ul>
+                                <li>\(\mu\ = \mu_{\overline{x}}\)</li>
+                                <li>This is only if the samples are truly random - the sample mean must be an&nbsp;<strong>unbiased estimator&nbsp;</strong>of the population mean</li>
+                            </ul>
+                        </li>
+                        <li><strong>Spread:</strong> the <strong>standard deviation </strong>of a sampling distribution for a mean with sample size \(n\) is simply \(\frac{\sigma}{\sqrt{n}}\)
+                            <ul>
+                                <li>This only holds true when the&nbsp;<strong>10% Condition</strong> is met: the sample size \(n\) must be less than one tenth of the population size \(N\)</li>
+                                <li>This is represented by \(\sigma_{\overline{x}}\)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Shape:</strong> the sampling distribution is approximated to a normal distribution only if the <strong>Central Limit Theorem's&nbsp;</strong>condition is met:<br />
+                            <ul>
+                                <li>The sample size \(n\) must be greater or equal to 30 (\(n \ge 30\)) for a normal approximation to be used</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Again, once you are able to approximate the sampling distribution to a known value, you can perform operations based on probability with a normal distribution, which is easy to do in statistics</li>
+    </ul>
+    
+    <hr class = "bottomborder">
+    
+  </body>
+</html>
