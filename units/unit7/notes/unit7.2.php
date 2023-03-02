@@ -1,53 +1,13 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Unit 7 Notes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="../../../style.css" rel="stylesheet">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    
-    
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../../../index.html">AP Statistics Helper</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Units
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/units/unit1/unit1.html">Unit 1</a></li>
-                <li><a class="dropdown-item" href="/units/unit2/unit2.html">Unit 2</a></li>
-                <li><a class="dropdown-item" href="/units/unit3/unit3.html">Unit 3</a></li>
-                <li><a class="dropdown-item" href="/units/unit4/unit4.html">Unit 4</a></li>
-                <li><a class="dropdown-item" href="/units/unit5/unit5.html">Unit 5</a></li>
-                <li><a class="dropdown-item" href="/units/unit6/unit6.html">Unit 6</a></li>
-                <li><a class="dropdown-item" href="/units/unit7/unit7.html">Unit 7</a></li>
-                <li><a class="dropdown-item" href="/units/unit8/unit8.html">Unit 8</a></li>
-                <li><a class="dropdown-item" href="/units/unit9/unit9.html">Unit 9</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/notes.php' ?>
+<?php startblock('unit') ?>
+    Unit 7 Notes
+<?php endblock() ?>
 
-    <header class = "title">
-      Significance Testing For Proportions
-    </header>
-    <hr>
+<?php startblock('title') ?>
+    Significance Testing For Proportions
+<?php endblock() ?>
     
-    <ul class = "notes">
+<?php startblock('notes') ?>
         <li>The conditions for performing a significance test for proportions are as follows:
             <ul>
                 <li><strong>Random Sample:</strong> The sample must be truly randomly chosen</li>
@@ -96,10 +56,4 @@
             </ul>
         </li>
 
-    </ul>
-    
-    
-    <hr class = "bottomborder">
-    
-  </body>
-</html>
+        <?php endblock() ?>
