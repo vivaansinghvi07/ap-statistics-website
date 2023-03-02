@@ -1,9 +1,10 @@
+<?php require_once 'ti.php' ?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php startblock('title')?><?php endblock()?></title>
+    <title><?php startblock('header')?><?php endblock()?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="/style.css" rel="stylesheet">
     <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
@@ -41,15 +42,15 @@
                 Units
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../../unit1/unit1.html">Unit 1</a></li>
-                <li><a class="dropdown-item" href="../../unit2/unit2.html">Unit 2</a></li>
-                <li><a class="dropdown-item" href="../../unit3/unit3.html">Unit 3</a></li>
-                <li><a class="dropdown-item" href="../../unit4/unit4.html">Unit 4</a></li>
-                <li><a class="dropdown-item" href="../../unit5/unit5.html">Unit 5</a></li>
-                <li><a class="dropdown-item" href="../../unit6/unit6.html">Unit 6</a></li>
-                <li><a class="dropdown-item" href="../../unit7/unit7.html">Unit 7</a></li>
-                <li><a class="dropdown-item" href="../../unit8/unit8.html">Unit 8</a></li>
-                <li><a class="dropdown-item" href="../../unit9/unit9.html">Unit 9</a></li>
+                <li><a class="dropdown-item" href="/units/unit1/unit1.html">Unit 1</a></li>
+                <li><a class="dropdown-item" href="/units/unit2/unit2.html">Unit 2</a></li>
+                <li><a class="dropdown-item" href="/units/unit3/unit3.html">Unit 3</a></li>
+                <li><a class="dropdown-item" href="/units/unit4/unit4.html">Unit 4</a></li>
+                <li><a class="dropdown-item" href="/units/unit5/unit5.html">Unit 5</a></li>
+                <li><a class="dropdown-item" href="/units/unit6/unit6.html">Unit 6</a></li>
+                <li><a class="dropdown-item" href="/units/unit7/unit7.html">Unit 7</a></li>
+                <li><a class="dropdown-item" href="/units/unit8/unit8.html">Unit 8</a></li>
+                <li><a class="dropdown-item" href="/units/unit9/unit9.html">Unit 9</a></li>
               </ul>
             </li>
           </ul>
@@ -62,8 +63,7 @@
     </header>
     <hr>
 
-    <div style = "text-align: center" class = "notes">When analyzing proportions, please enter your sample proportion as a number frmo 0 to 1. Fractions are accepted, so you can fill in the values of X/n (representing \(\frac{X}{n}\)) in the input if you only have the number of successes \(X\). Please enter the confidence level as a decimal between 0 and 1 rather than a percent.</div>
-    <hr>
+    <?php startblock('description') ?><?php endblock()?>
 
     <form action = "" class = "data-inp">
       <?php startblock('settings')?><?php endblock() ?>
