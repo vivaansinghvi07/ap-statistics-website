@@ -1,3 +1,4 @@
+<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/notes.php' ?>
 <?php startblock('unit') ?>
 Unit 6 Notes
 <?php endblock() ?>
