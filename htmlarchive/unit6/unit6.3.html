@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unit 6 Notes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="../../../style.css" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../../index.html">AP Statistics Helper</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Units
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/units/unit1/unit1.html">Unit 1</a></li>
+                <li><a class="dropdown-item" href="/units/unit2/unit2.html">Unit 2</a></li>
+                <li><a class="dropdown-item" href="/units/unit3/unit3.html">Unit 3</a></li>
+                <li><a class="dropdown-item" href="/units/unit4/unit4.html">Unit 4</a></li>
+                <li><a class="dropdown-item" href="/units/unit5/unit5.html">Unit 5</a></li>
+                <li><a class="dropdown-item" href="/units/unit6/unit6.html">Unit 6</a></li>
+                <li><a class="dropdown-item" href="/units/unit7/unit7.html">Unit 7</a></li>
+                <li><a class="dropdown-item" href="/units/unit8/unit8.html">Unit 8</a></li>
+                <li><a class="dropdown-item" href="/units/unit9/unit9.html">Unit 9</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class = "title">
+      Confidence Intervals for Means
+    </header>
+    <hr>
+    
+    <ul class = "notes">
+        <li>When constructing a confidence interval for means, you must again check three conditions:
+            <ol style="list-style-type: decimal;">
+                <li>The sample must be taken randomly (from an SRS)</li>
+                <li>The population size must be at least 10 times the sample size
+                    <ul style="list-style-type: disc;">
+                        <li>\(N \ge 10n\)</li>
+                    </ul>
+                </li>
+                <li>You must be able to determine your sampling distribution is approximately normal
+                    <ul>
+                        <li>According to the Central Limit Theorem, if your sample size is 30 or greater, your sampling distribution will be normal</li>
+                        <li>If the above condition is not met, you can use a <a class = "notelink" href = "/units/unit2/calculators/npp.html">normal probability plot</a> to analyze the linearity of your data</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>When trying to create a sampling distribution for means, the following problem arises: How do you find the standard deviation of the population?
+            <ul>
+                <li>When we were working with proportions, we could estimate it from just knowing the sample proportion</li>
+                <li>However, there is no calculation we can do for means; our best estimate is the standard deviation of the sample, \(s_\overline{x}\)</li>
+                <li>Therefore, we assume the standard deviation in the interval to be the&nbsp;<strong>standard error of the sample mean</strong>
+                    <ul>
+                        <li>\(SE_\overline{x} = \frac{s_x}{\sqrt{n}}\)
+                            <ul>
+                                <li>This formula takes the standard deviation of the sample, and divides it by the square root of the sample size to estimate the standard error of the sample mean</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Because we are using the standard error of the sample mean, we need to use a&nbsp;<strong>t-distribution</strong> to calculate the&nbsp;<strong>critical value</strong>&nbsp;rather than a normal distribution as we did for proportions
+            <ul>
+                <li>&nbsp;A t-distribution looks similar to a normal distribution, but has much longer tails
+                    <ul>
+                        <li>Always has a center of 0 - generally not moved or transformed much as normal distributions are</li>
+                        <li>As you increase the sample size, the t-distribution approaches the standard normal curve</li>
+                    </ul>
+                </li>
+                <li><img class = "image" src = "../imgs/t-vs-normal.png"></li>
+                <li>Recall that when we calculated the <a class = "notelink" target="_blank" href = "/units/unit2/notes/unit2.2.hmtl">z-score</a>, we did something like the following: \(z = \frac{\overline{x} - \mu_\overline{x}}{\sigma_x / \sqrt{n}}\)
+                    <ul>
+                        <li>\(\sigma_x / \sqrt{n}\) can also be represented as \(\sigma_\overline{x}\), as we divide the population standard deviation by the square root of \(n\) to find the sampling distribution's standard deviation</li>
+                        <li>To find the t-score, we do this: \(t = \frac{\overline{x} - \mu_\overline{x}}{s_x / \sqrt{n}}\)
+                            <ul>
+                                <li>This is not used much for confidence intervals, but is used in the next section</li>
+                            </ul>
+                        </li>
+                        <li>All we did is replace the population standard deviation with the sample standard deviation, but when we do this, the sample standard deviation can vary, causing the longer tails</li>
+                    </ul>
+                </li>
+                <li>When the sample size is \(n\), we need to use a t-distribution with&nbsp;<strong>degrees of freedom&nbsp;</strong>\(n-1\)
+                    <ul>
+                        <li>Similar to with proportions, we need to find the area of one of these tails
+                            <ul>
+                                <li>We use the function&nbsp;<strong>invT(df: \(n-1\), value: \(a\))</strong> on the calculator to find the area under the curve at \(a\) or below
+                                    <ul>
+                                        <li>Recall that \(a\) represents the length of one of the tails, for which directions were given on the <a class = "notelink" target="_blank" href = "unit6.2.html">previous page</a> on its calculation</li>
+                                        <li>You also do not need to add a mean or standard deviation, as this function simply gives you critical values</li>
+                                        <li>You can also use&nbsp;<strong>Table C</strong> to find t-values, but it is lengthy and technology does it much faster</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>The critical value represented by a t-distribution is written as \(t^*\)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Therefore, a confidence interval for a population mean given a sample mean \(\overline{x}\) and sample standard deviation \(s_x\) is: $$ \text{interval} = \overline{x} + t^* \cdot \frac{s_x}{\sqrt{n}} $$</li>
+        <li>The previous approach for solving for sample size or confidence level is somewhat problematic now that we use \(s_x\), which is unknown to us, and \(t^*\), which itself depends on the sample size
+            <ul>
+                <li>The margin of error is: $$ ME = t^* \cdot \frac{s_x}{\sqrt{n}} $$</li>
+                <li>What we can do is&nbsp;<strong>estimate the population standard deviation</strong> by choosing a reasonable value from a similar study
+                    <ul>
+                        <li>Therefore, we can pretend that we use a z-score, and our new equation becomes: $$ ME = z^* \cdot \frac{\sigma}{\sqrt{n}} $$
+                            <ul>
+                                <li>Now, we can solve as detailed in the bottom of the notes for proportions <a class = "notelink" target="_blank" href = "unit6.2.html">here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+    <hr class = "bottomborder">
+    
+  </body>
+</html>

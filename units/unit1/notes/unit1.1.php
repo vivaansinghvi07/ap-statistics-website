@@ -26,7 +26,7 @@ Introduction to Statistics
               <li>Note: While the variable may seem numerical, such as grade level, it can still be categorical, because it does not make sense to take an average Zip-Code.</li>
             </ul>
           </li>
-          <li>Further information on variables can be found <a class = "notelink" href = "https://youtu.be/6DzMnA2L_4E" target = "_blank"> here</a></li>
+          <li>Further information on variables can be found <a href = "https://youtu.be/6DzMnA2L_4E" target = "_blank"> here</a></li>
         </ul>
       </li>
       <li>A <span class = "bold">distribution</span> is the pattern that a variable follows
