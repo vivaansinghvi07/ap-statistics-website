@@ -9,7 +9,7 @@
 <?php endblock() ?>
 
 <?php startblock('title')?>
-  Analyze Categorical Data
+  Graph Categorical Data
 <?php endblock() ?>
 
 <?php startblock('settings') ?>
