@@ -16,5 +16,5 @@
 <?php endblock() ?>
 
 <?php startblock('tools') ?>
-  
+  <li><a href = "calculators/hyptest.php" class = "pagelink">Run a Hypothesis Test</a></li>
 <?php endblock() ?>
