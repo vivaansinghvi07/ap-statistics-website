@@ -40,7 +40,7 @@
             <input type="text" class="form-control" id = "prop-a" placeholder="Significance Level" aria-label="Significance Level">  
           </div>
           <div class = "col">
-            <select id = "p-operation" class="form-select" aria-label="Default select example">
+            <select id = "prop-operation" class="form-select" aria-label="Default select example">
               <option selected value="blank">Select your alternate hypothesis</option>
               <option value="lower">p < claim</option>
               <option value="greater">p > claim</option>
@@ -69,7 +69,7 @@
             <input type="text" class="form-control" id = "mean-c" placeholder="Confidence Level" aria-label="Confidence Level">
           </div>
           <div class="col">
-            <select id = "p-operation" class="form-select" aria-label="Default select example">
+            <select id = "mean-operation" class="form-select" aria-label="Default select example">
               <option selected value="blank">Select your alternate hypothesis</option>
               <option value="lower">mu < claim</option>
               <option value="greater">mu > claim</option>
