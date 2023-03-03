@@ -20,8 +20,8 @@
 <?php startblock('settings') ?>
       <select id = "type" class="form-select" aria-label="Default select example" onchange = "change(); return false;">
         <option selected value="blank">Select the type of variable you want a confidence interval of</option>
-        <option value="prop">Sample Proportion</option>
-        <option value="mean">Sample Mean</option>
+        <option value="prop">Proportion</option>
+        <option value="mean">Mean</option>
       </select>
       <div hidden = "hidden" id = "prop-settings">
         <div class="row g-3" style = "margin-top: 18px;">
