@@ -16,15 +16,6 @@
     <script src = "/libraries/statistics-distributions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src='https://unpkg.com/simple-statistics@7.8.0/dist/simple-statistics.min.js'></script>
-    <style>
-      .question {
-        max-height: 50vw;
-        width: auto;
-        border: 1px solid #000000;
-        margin: 50px auto;
-        display: block;
-      }
-    </style>
   </head>
   <body>
     
