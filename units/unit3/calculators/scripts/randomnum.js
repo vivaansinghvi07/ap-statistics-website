@@ -11,6 +11,10 @@ function calculate() {
   var output = document.querySelector("#output");
   output.innerHTML = null;
 
+  // gets the border and clears it
+  var border = document.getElementById('border');
+  border.setAttribute("hidden", "hidden")
+
   // checks for an impossible case
   if (!replacement && upper - lower < count) {
     output.innerHTML = "Without replacement, you cannot have a count higher than that of the available numbers!";
@@ -44,6 +48,9 @@ function calculate() {
       output.innerHTML += String(temp) + "<br>";
     }
   }
+
+  // displays the border
+  border.removeAttribute("hidden");
 }
 
 // generates a random number from min (inclusive) to max (exclusive)
