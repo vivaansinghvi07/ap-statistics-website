@@ -1,4 +1,4 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/ti.php' ?><!doctype html>
+<?php require_once $_SERVER['DOCUMENT_ROOT'].'/libraries/template-inheritance/ti.php' ?><!doctype html>
 
 <html lang="en">
   <head>
