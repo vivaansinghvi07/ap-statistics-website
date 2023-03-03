@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/calculators.php' ?>
 
 <?php startblock('header')?>
-  Unit 6 Tools
+  Confidence Interval
 <?php endblock() ?>
 
 <?php startblock('scripts') ?>

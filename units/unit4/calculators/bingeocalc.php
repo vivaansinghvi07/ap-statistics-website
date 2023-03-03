@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/calculators.php' ?>
 
 <?php startblock('header')?>
-  Unit 4 Tools
+  Binomial and Geometric Variables
 <?php endblock() ?>
 
 <?php startblock('scripts') ?>

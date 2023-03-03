@@ -1,8 +1,8 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/calculators.php' ?>
 
 <?php startblock('header')?>
-  Unit 1 Tools
-<? endblock() ?>
+  Graph Quantitative Data
+<? endblock() ?>  
 
 <?php startblock('scripts') ?>
   <script src = "scripts/quangraph.js"></script>

@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/calculators.php' ?>
 
 <?php startblock('header')?>
-  Unit 3 Tools
+  Random Number Generator
 <?php endblock() ?>
 
 <?php startblock('scripts') ?>

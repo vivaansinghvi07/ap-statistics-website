@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/calculators.php' ?>
 
 <?php startblock('header')?>
-  Unit 2 Tools
+  Normal Probability Plot
 <?php endblock() ?>
 
 <?php startblock('scripts') ?>

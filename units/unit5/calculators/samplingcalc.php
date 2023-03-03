@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/calculators.php' ?>
 
 <?php startblock('header')?>
-  Unit 5 Tools
+  Probability of a Sample
 <?php endblock() ?>
 
 <?php startblock('scripts') ?>
