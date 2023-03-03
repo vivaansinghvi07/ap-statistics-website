@@ -306,8 +306,7 @@ function _subt ($n, $p) {
 		do { 
 			var $p1 = _subtprob($n, $x);
 			var $n1 = $n + 1;
-			var $delta = ($p1 - $p) 
-				/ Math.exp(($n1 * Math.log($n1 / ($n + $x * $x)) 
+			var $delta = ($p1 - $p) / Math.exp(($n1 * Math.log($n1 / ($n + $x * $x)) 
 					+ Math.log($n/$n1/2/Math.PI) - 1 
 					+ (1/$n1 - 1/$n) / 6) / 2);
 			$x += $delta;
@@ -320,7 +319,7 @@ function _subt ($n, $p) {
 function _subtprob ($n, $x) {
 
 	var $a;
-        var $b;
+    var $b;
 	var $w = Math.atan2($x / Math.sqrt($n), 1);
 	var $z = Math.pow(Math.cos($w), 2);
 	var $y = 1;
