@@ -3,7 +3,7 @@ function change() {
   // function that returns the html for the options depending on the count entered
   let getHTML = function (n) {
     return '<label for = "var' + n + '" class = "form-label">Random Variable ' + n + '</label><div id = "var' + n + '" class="row g-3" style = "margin-bottom: 20px;"><div class="col"><input type="text" class="form-control" id = "m' + n + '" placeholder="Mean" aria-label="Mean"></div><div class="col"><input type="text" class="form-control" id = "std' + n + '" placeholder="Standard Deviation" aria-label="Standard Deviation"></div><div class="col"><input type="text" class="form-control" id = "scl' + n + '" placeholder="Scale Factor" aria-label="Scale Factor"></div><div class="col"><input type="text" class="form-control" id = "cnt' + n + '" placeholder="Count" aria-label="Count"></div></div>';
-  }
+  };
   
   // gets the number of random variables
   var count = parseInt(document.getElementById("count").value);
@@ -18,6 +18,9 @@ function change() {
   // hides the table
   document.getElementById("tbl").setAttribute("hidden", "hidden");
 
+  // gets the border and hides it
+  document.getElementById("border").setAttribute("hidden", "hidden");
+
   // gets the place where the options are stored
   for (let i = 1; i <= count; i++) {
     options.innerHTML += getHTML(i);
@@ -31,6 +34,10 @@ function calculate() {
   // gets and clears the output
   var output = document.getElementById("output");
   output.innerHTML = null;
+
+  // gets the border and hides it
+  var border = document.getElementById("border");
+  border.setAttribute("hidden", "hidden");
 
   // intializes the mean and variance
   var mean = 0;
@@ -67,10 +74,11 @@ function calculate() {
   }
   
   // sets the output values
-  document.getElementById("mean").innerHTML = String(mean);
+  document.getElementById("mean").innerHTML = mean.toFixed(4);
   document.getElementById("stddev").innerHTML = (Math.sqrt(variance)).toFixed(4);
 
-  // displays the table
+  // displays the table and bottom border
   document.getElementById("tbl").removeAttribute("hidden");
+  border.removeAttribute("hidden");
   
 }
