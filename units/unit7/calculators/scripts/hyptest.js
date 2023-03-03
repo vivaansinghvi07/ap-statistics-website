@@ -88,4 +88,52 @@ function calculate() {
 
         console.log(p_value);
     }
+    else if (type === "mean") {
+        // gets the type of operation
+        var operation = document.getElementById("mean-operation").value;
+
+        // checks if operation is blank
+        if (operation === "blank") {
+            output.innerHTML = "Please choose an alternate hypothesis!";
+            return false;
+        }
+
+        // gets values
+        var xbar = evalNumber(document.getElementById("mean-mu").value, output);
+        var s_x = evalNumber(document.getElementById("mean-sigma").value, output);
+        var n = evalNumber(document.getElementById("mean-n").value, output);
+        var alpha = evalProbability(document.getElementById("mean-a").value, output);
+        var claim = evalNumber(document.getElementById("mean-claim").value, output);
+
+        // checks if any need to be quitted
+        [xbar, s_x, n, alpha, claim].forEach((element) => {
+            if (element === "q") {
+                return false;
+            }
+        });
+
+        // converts n to an integer
+        n = parseInt(n);
+
+        // assigns values of the sampling distribution
+        mu = claim;
+        sigma = s_x / Math.sqrt(n);
+
+        // finds the t-value
+        let t = (xbar - mu) / (sigma);
+
+        // gets the p_value - the tprob() function gives upper probabilities
+        let p_value;
+        if (operation === "lower") {
+            p_value = 1 - tprob(n-1, t);
+        }
+        else if (operation === "greater") {
+            p_value = tprob(n-1, t);
+        }
+        else {
+            p_value = 2 * tprob(n-1, Math.abs(t));
+        }
+
+        
+    }
 }
