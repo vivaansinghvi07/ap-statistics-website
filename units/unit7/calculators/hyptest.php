@@ -66,7 +66,7 @@
         </div> 
         <div class = "row g-3" style = "margin-top: 18px;">
           <div class="col">
-            <input type="text" class="form-control" id = "mean-c" placeholder="Confidence Level" aria-label="Confidence Level">
+            <input type="text" class="form-control" id = "mean-a" placeholder="Confidence Level" aria-label="Confidence Level">
           </div>
           <div class="col">
             <select id = "mean-operation" class="form-select" aria-label="Default select example">
