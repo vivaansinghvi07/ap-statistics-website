@@ -137,3 +137,80 @@ function calculate() {
         
     }
 }
+
+function plotTwoSidedGraphs(mu, sigma, container, lowerB, upperB) {
+
+    // defines bounds for the graph
+    let step = sigma * 4;
+    let start = mu - step;
+    let stop = mu + step;
+
+    // defines arrays for points
+    let xValues = new Array(), yValues = new Array();
+
+    // populates the arrays with numbers
+    for (let i = start; i < stop; i += step / 1000) {
+        xValues.push(i);
+        yValues.push(normalFunction(mu, sigma, i));
+    }
+
+    // layout for the backgruond graph based on documentation
+    var background = {
+        x: xValues,
+        y: yValues,
+        type: 'scatter',
+        mode: 'lines',
+        line: {
+            color:  "rgba(0, 120, 136, 1)", 
+        },
+    };
+
+    // creates arrays for teh foreground graph
+    let lowerXValues = new Array(), lowerYValues = new Array(), upperXValues = new Array(), upperYValues = new Array();
+    
+    // populates the arrays up till the lower bound
+    for (let i = start; i < lowerB; i += step / 1000) {
+        lowerXValues.push(i);
+        lowerYValues.push(normalFunction(mu, sigma, i));
+    }
+
+    // populates the array from the upper bound to the end
+    for (let i = upperB; i < stop; i += step / 1000) {
+        upperXValues.push(i);
+        upperYValues.push(normalFunction(mu, sigma, i));
+    }
+
+    // creates foregound for the bounds
+    var foregroundLower = {
+        x: lowerXValues,
+        y: lowerYValues,
+        type: 'scatter',
+        mode: 'lines',
+        fill: 'tozeroy',
+        line: {
+            color:  "rgba(0, 120, 136, 1)", 
+        },
+    };
+    var foregroundUpper = {
+        x: upperXValues,
+        y: upperYValues,
+        type: 'scatter',
+        mode: 'lines',
+        fill: 'tozeroy',
+        line: {
+            color:  "rgba(0, 120, 136, 1)", 
+        },
+    };
+
+    // layout for graph
+    var layout = {
+        title: "Visualization On A Curve",
+        yaxis: {
+            showticklabels: false
+        },
+        showlegend: false
+    };  
+
+    // plots the graph
+    Plotly.newPlot(container, [background, foregroundLower, foregroundUpper], layout);
+}
