@@ -1,3 +1,8 @@
+const stateTitle = "<div style=\"font-size: 28px;\">State:</div>";
+const planTitle = "<div style=\"font-size: 28px;\">Plan:</div>";
+const doTitle = "<div style=\"font-size: 28px;\">Do:</div>";
+const concludeTitle = "<div style=\"font-size: 28px;\">Conclude:</div>";
+
 function change() {
     // see script.js for documentation
     changeSettings(['mean', 'prop']);
@@ -36,6 +41,7 @@ function calculate() {
 
     // initializes variables to be used for graphing later on
     var mu, sigma, lowerBound, upperBound;
+    var twoSided = false;
 
     if (type === "blank") {
         output.innerHTML = "Please select a variable!";
@@ -78,15 +84,68 @@ function calculate() {
         let p_value;
         if (operation === "greater") {
             p_value = 1 - areaUnderNormal(0, 1, z);
+
+            // plots area from the sample p and up
+            lowerBound = phat;
+            upperBound = mu + 4 * sigma;
         }
         else if (operation === "lower") {
             p_value = areaUnderNormal(0, 1, z);
+
+            // plots area from sample p and below
+            upperBound = phat;
+            lowerBound = mu - 4 * sigma;
         }
         else {
             p_value = 2 * areaUnderNormal(0, 1, -Math.abs(z));
+            let diff = Math.abs(phat - mu);
+
+            // sets bounds and sets two-sided to be true
+            lowerBound = mu - diff;
+            upperBound = mu + diff;
+            twoSided = true;
         }
 
-        console.log(p_value);
+        // prints the answer
+        state.innerHTML = stateTitle + "We will be using a one-sample z-test for proportions to determine the validity of the claim that [insert context here], using a significance level of \\(\\alpha = " + alpha.toFixed(2) + "\\).";
+
+        // calculates whether the large counts condition is met
+        let largeCounts = n * claim >= 10 && n * (1 - claim) >= 10;
+
+        // prints the plan part
+        plan.innerHTML = planTitle + "Declaring Variables: <br>" + "&emsp;\\(\\hat{p} = \\text{[insert context here]} = " + phat.toFixed(3) + " \\quad \\quad " +
+                                                                   "\\mu_{\\hat{p}} = p_0 = " + claim.toFixed(3) + " \\quad \\quad " + 
+                                                                   "\\sigma_{\\hat{p}} = \\sqrt{\\frac{{p_0}(1-{p_0})}{n}} = \\sqrt{\\frac{" + claim.toFixed(3) + "(1 - " + claim.toFixed(3) + ")}{" + String(n) + "}} = " + sigma.toFixed(3) + "\\)<br><br>" + 
+                                     "Checking Conditions: <br>" + "&emsp;1. We assume the sample was taken randomly, if not explicitly stated<br>" + 
+                                                                   "&emsp;2. We assume the population size is larger than " + String(10 * n) + "<br>" + 
+                                                                   "&emsp;3. We need to check the Large Counts Condition: <br>" + "&emsp;&emsp;\\(n \\cdot p_0 \\ge 10 \\quad \\quad \\quad \\quad \\ \\ " + String(n) + "\\cdot" + claim.toFixed(3) + " \\ge 10 \\quad \\quad " + (n * claim).toFixed(3) + "\\ge 10\\)<br>" + 
+                                                                                                                            "&emsp;&emsp;\\(n \\cdot (1-{p_0}) \\ge 10 \\quad \\quad " + String(n) + "\\cdot" + (1-claim).toFixed(3) + " \\ge 10 \\quad \\quad " + (n * (1 - claim)).toFixed(3) + "\\ge 10\\)<br>" + 
+                                                                      "&emsp;&emsp;The condition is " + (largeCounts ? "" : "not ") + "met.";
+                                                        
+
+        // prints do part depending on type of operation
+        if (operation === "between") {
+            let operationSign = z > 0 ? "\\ge" : "\\le";
+            doo.innerHTML = doTitle + "<br>\\(\\text{probability of sample} = P(\\hat{p} " + operationSign + " p_0) \\cdot 2\\)<br>" + 
+                                      "<br>\\( = P(z " + operationSign + "\\frac{" + phat.toFixed(3) + " - " + claim.toFixed(3) + "}{" + sigma.toFixed(3) + "}) \\cdot 2\\)<br>" + 
+                                      "<br>\\( = " + (p_value / 2).toFixed(3) + " \\cdot 2 = " + (p_value).toFixed(3) + "\\)<br>";
+        }
+
+        else {
+            let operationSign = operation === "greater" ? "\\ge" : "\\le";
+            doo.innerHTML = doTitle + "<br>\\(\\text{probability of sample} = P(\\hat{p} " + operationSign + " p_0)\\)<br>" + 
+                                      "<br>\\( = P(z " + operationSign + "\\frac{" + phat.toFixed(3) + " - " + claim.toFixed(3) + "}{" + sigma.toFixed(3) + "})\\)<br>" + 
+                                      "<br>\\( = " + p_value.toFixed(3) + "\\)<br>";
+        }
+
+        // loads mathjax for everything
+        ["state", "plan", "do"].forEach((element) => {
+            loadMathJax(element);
+        })
+
+        // prints the conclude part
+        conclude.innerHTML = concludeTitle + "Because the calculated p-value of " + p_value.toFixed(3) + " is " + (p_value > alpha ? "greater than" : "less than") + " the signifiance level of " + alpha.toFixed(2) + ", we " + (p_value > alpha ? "fail to" : "") + " reject the null hypothesis that [insert context here]."; 
+        
     }
     else if (type === "mean") {
         // gets the type of operation
@@ -123,19 +182,45 @@ function calculate() {
         let t = (xbar - mu) / (sigma);
 
         // gets the p_value - the tprob() function gives upper probabilities
+        // also gets the bounds for the graph
         let p_value;
         if (operation === "lower") {
             p_value = 1 - tprob(n-1, t);
+
+            // plots area from sample p and below
+            upperBound = xbar;
+            lowerBound = mu - 4 * sigma;
         }
         else if (operation === "greater") {
             p_value = tprob(n-1, t);
+
+            // plots area from the sample p and up
+            lowerBound = xbar;
+            upperBound = mu + 4 * sigma;
         }
         else {
             p_value = 2 * tprob(n-1, Math.abs(t));
+            let diff = Math.abs(xbar - mu);
+
+            // sets bounds and sets two-sided to be true
+            lowerBound = mu - diff;
+            upperBound = mu + diff;
+            twoSided = true;
         }
 
         
     }
+
+    // plots the graph (differently if it's a two sided test)
+    if (twoSided) {
+        plotTwoSidedGraphs(mu, sigma, container, lowerBound, upperBound);
+    }
+    else {
+        plotNormalGraphs(mu, sigma, container, lowerBound, upperBound);
+    }
+
+    // shows the border
+    border.removeAttribute("hidden");
 }
 
 function plotTwoSidedGraphs(mu, sigma, container, lowerB, upperB) {
