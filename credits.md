@@ -7,3 +7,4 @@
 - credit canvas text editor for easy html use
 - credit @benrasmusen for his library
 - credit AP 
+- credit bootstrap
