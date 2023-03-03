@@ -33,15 +33,15 @@
                 Units
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/units/unit1/unit1.php">Unit 1</a></li>
-                <li><a class="dropdown-item" href="/units/unit2/unit2.php">Unit 2</a></li>
-                <li><a class="dropdown-item" href="/units/unit3/unit3.php">Unit 3</a></li>
-                <li><a class="dropdown-item" href="/units/unit4/unit4.php">Unit 4</a></li>
-                <li><a class="dropdown-item" href="/units/unit5/unit5.php">Unit 5</a></li>
-                <li><a class="dropdown-item" href="/units/unit6/unit6.php">Unit 6</a></li>
-                <li><a class="dropdown-item" href="/units/unit7/unit7.php">Unit 7</a></li>
-                <li><a class="dropdown-item" href="/units/unit8/unit8.php">Unit 8</a></li>
-                <li><a class="dropdown-item" href="/units/unit9/unit9.php">Unit 9</a></li>
+                <li><a class="dropdown-item" href="/units/unit1/unit1.php">Unit 1: One-Variable Data</a></li>
+                <li><a class="dropdown-item" href="/units/unit2/unit2.php">Unit 2: More with Quantitative Data</a></li>
+                <li><a class="dropdown-item" href="/units/unit3/unit3.php">Unit 3: Experimental Design</a></li>
+                <li><a class="dropdown-item" href="/units/unit4/unit4.php">Unit 4: Probability</a></li>
+                <li><a class="dropdown-item" href="/units/unit5/unit5.php">Unit 5: Sampling Distributions</a></li>
+                <li><a class="dropdown-item" href="/units/unit6/unit6.php">Unit 6: Confidence Intervals</a></li>
+                <li><a class="dropdown-item" href="/units/unit7/unit7.php">Unit 7: Hypothesis Testing</a></li>
+                <li><a class="dropdown-item" href="/units/unit8/unit8.php">Unit 8: Chi-Square Analyses</a></li>
+                <li><a class="dropdown-item" href="/units/unit9/unit9.php">Unit 9: Inference with Slopes</a></li>
               </ul>
             </li>
           </ul>
