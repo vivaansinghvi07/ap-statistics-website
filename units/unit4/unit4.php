@@ -14,7 +14,7 @@
   <li><a href = "notes/unit4.3.php" class = "pagelink">Conditional Probability</a></li>
   <li><a href = "notes/unit4.4.php" class = "pagelink">Random Variables</a></li>
   <li><a href = "notes/unit4.5.php" class = "pagelink">Shifting and Combining Random Variables</a></li>
-  <li><a href = "notes/unit4.6.html" class = "pagelink">Binomial and Geometric Variables</a></li>
+  <li><a href = "notes/unit4.6.php" class = "pagelink">Binomial and Geometric Variables</a></li>
 <?php endblock() ?>
 
 <?php startblock('tools') ?>
