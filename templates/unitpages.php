@@ -54,7 +54,7 @@
       </li>
       <li><span style = "font-size: 28px;">Tools</span>
         <ul>
-            <?php startblock('calculators') ?><?php endblock() ?>
+            <?php startblock('tools') ?><?php endblock() ?>
         </ul>
       </li>
     </ul>
