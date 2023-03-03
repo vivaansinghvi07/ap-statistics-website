@@ -208,7 +208,38 @@ function calculate() {
             twoSided = true;
         }
 
-        
+        // prints the state part
+        state.innerHTML = stateTitle + "We will be using a one-sample t-test to determine tie validity of the claim that [insert context here] with a significance level of \\(\\alpha = " + alpha.toFixed(2) + "\\)";
+
+        // prints the plan part
+        // prints the plan part
+        plan.innerHTML = planTitle + "Declaring Variables: <br>" + "&emsp;\\(\\overline{x} = \\text{[insert context here]}  = " + String(xbar) + " \\quad \\quad \\mu_{\\overline{x}} = \\mu_0 = " + String(mu) + " \\quad \\quad \\sigma_{\\overline{x}} \\approx \\frac{s_x}{\\sqrt{n}} = \\frac{" + String(s_x) + "}{\\sqrt{" + String(n) + "}} = " + sigma.toFixed(3) + "\\) <br><br>" +
+                                     "Checking Conditions: <br>" + "&emsp;1. The sample must be randomly chosen<br>" + 
+                                                                   "&emsp;2. We assume the population size is greater than " + String(n * 10) + " (ten times the sample size)<br>" +
+                                                                   "&emsp;3. The sample size is " + (n >= 30 ? "" : "not ") + "large enough to meet the Central Limit Theorem (must be at least 30)<br>";
+
+        // prints do part depending on type of operation
+        if (operation === "between") {
+            let operationSign = t > 0 ? "\\ge" : "\\le";
+            doo.innerHTML = doTitle + "<br>\\(\\text{probability of sample} = P(\\overline{x} " + operationSign + " \\mu_0) \\cdot 2\\)<br>" + 
+                                      "<br>\\( = P(t " + operationSign + "\\frac{" + xbar.toFixed(3) + " - " + claim.toFixed(3) + "}{" + sigma.toFixed(3) + "}) \\cdot 2\\)<br>" + 
+                                      "<br>\\( = " + (p_value / 2).toFixed(3) + " \\cdot 2 = " + (p_value).toFixed(3) + "\\)<br>";
+        }
+
+        else {
+            let operationSign = operation === "greater" ? "\\ge" : "\\le";
+            doo.innerHTML = doTitle + "<br>\\(\\text{probability of sample} = P(\\overline{x} " + operationSign + " \\mu_0)\\)<br>" + 
+                                      "<br>\\( = P(t " + operationSign + "\\frac{" + xbar.toFixed(3) + " - " + claim.toFixed(3) + "}{" + sigma.toFixed(3) + "})\\)<br>" + 
+                                      "<br>\\( = " + p_value.toFixed(3) + "\\)<br>";
+        }
+
+        // prints the conclude part
+        conclude.innerHTML = concludeTitle + "Because the calculated p-value of " + p_value.toFixed(3) + " is " + (p_value > alpha ? "greater than" : "less than") + " the signifiance level of " + alpha.toFixed(2) + ", we " + (p_value > alpha ? "fail to" : "") + " reject the null hypothesis that [insert context here]."; 
+
+        // loads the mathjax
+        ["state", "plan", "do"].forEach((element) => {
+            loadMathJax(element);
+        });
     }
 
     // plots the graph (differently if it's a two sided test)
