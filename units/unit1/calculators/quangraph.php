@@ -2,7 +2,7 @@
 
 <?php startblock('header')?>
   Graph Quantitative Data
-<? endblock() ?>  
+<?php endblock() ?>  
 
 <?php startblock('scripts') ?>
   <script src = "scripts/quangraph.js"></script>

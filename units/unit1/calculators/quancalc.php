@@ -2,7 +2,7 @@
 
 <?php startblock('header')?>
   Analyze Quantitative Data
-<? endblock() ?>
+<?php endblock() ?>
 
 <?php startblock('scripts') ?>
   <script src = "scripts/quancalc.js"></script>

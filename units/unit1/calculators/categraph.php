@@ -2,7 +2,7 @@
 
 <?php startblock('header')?>
   Graph Categorical Data
-<? endblock() ?>
+<?php endblock() ?>
 
 <?php startblock('scripts') ?>
   <script src = "scripts/categraph.js"></script>
