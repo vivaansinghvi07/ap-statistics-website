@@ -22,7 +22,7 @@
     
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/index.html">AP Statistics Helper</a>
+        <a class="navbar-brand" href="/index.php">AP Statistics Helper</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,6 +42,9 @@
                 <li><a class="dropdown-item" href="/units/unit7/unit7.php">Unit 7: Hypothesis Testing</a></li>
                 <li><a class="dropdown-item disabled">More coming soon!</a></li>
               </ul>
+            </li>
+            <li class = "nav-item">
+              <a class="nav-link active" href = "/credits.php">Credits</a>
             </li>
           </ul>
         </div>

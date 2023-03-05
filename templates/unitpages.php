@@ -36,6 +36,9 @@
                 <li><a class="dropdown-item disabled">More coming soon!</a></li>
               </ul>
             </li>
+            <li class = "nav-item">
+              <a class="nav-link active" href = "/credits.php">Credits</a>
+            </li>
           </ul>
         </div>
       </div>
