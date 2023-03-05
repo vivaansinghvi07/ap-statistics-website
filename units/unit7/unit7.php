@@ -12,7 +12,8 @@
   <li><a href = "notes/unit7.1.php" class = "pagelink">Introduction to Significance Testing</a></li>
   <li><a href = "notes/unit7.2.php" class = "pagelink">Significance Testing For Proportions</a></li>
   <li><a href = "notes/unit7.3.php" class = "pagelink">Significance Testing For Means</a></li>
-  <li><a href = "notes/unit7.4.php" class = "pagelink">Type I and Type II Errors</li>
+  <li><a href = "notes/unit7.4.php" class = "pagelink">Type I and Type II Errors</a></li>
+  <li><a href = "notes/unit7.5.php" class = "pagelink">Significance Testing for Two Variables</a></li>
 <?php endblock() ?>
 
 <?php startblock('tools') ?>
