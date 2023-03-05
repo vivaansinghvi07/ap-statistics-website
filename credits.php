@@ -9,7 +9,7 @@
 <?php endblock() ?>
 
 <?php startblock('description') ?>
-  Here are some resources that made this website possible!
+  <div style = "text-align: center" class = "notes">Here are some resources that made this website possible!</div>
 <?php endblock() ?>
 
 <?php startblock('output') ?>
