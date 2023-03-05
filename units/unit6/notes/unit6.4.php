@@ -28,4 +28,5 @@
             <li>Now, you can calculate your confidence interval. Note that for intervals for means, the critical value uses the degrees of freedom of the smaller sample</li>
         </ul>
     </li>
+    <li>For the sake of time, this website does not have a calculator to do this</li>
 <?php endblock() ?>
