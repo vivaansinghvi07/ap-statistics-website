@@ -33,8 +33,7 @@
                 <li><a class="dropdown-item" href="/units/unit5/unit5.php">Unit 5: Sampling Distributions</a></li>
                 <li><a class="dropdown-item" href="/units/unit6/unit6.php">Unit 6: Confidence Intervals</a></li>
                 <li><a class="dropdown-item" href="/units/unit7/unit7.php">Unit 7: Hypothesis Testing</a></li>
-                <li><a class="dropdown-item" href="/units/unit8/unit8.php">Unit 8: Chi-Square Analyses</a></li>
-                <li><a class="dropdown-item" href="/units/unit9/unit9.php">Unit 9: Inference with Slopes</a></li>
+                <li><a class="dropdown-item disabled">More coming soon!</a></li>
               </ul>
             </li>
           </ul>
