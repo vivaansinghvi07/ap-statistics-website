@@ -12,6 +12,7 @@
   <li><a href = "notes/unit6.1.php" class = "pagelink">Introduction to Confidence Intervals</a></li>
   <li><a href = "notes/unit6.2.php" class = "pagelink">Confidence Intervals for Proportions</a></li>
   <li><a href = "notes/unit6.3.php" class = "pagelink">Confidence Intervals For Means</a></li>
+  <li><a href = "notes/unit6.4.php" class = "pagelink">Confidence Intervals for Two Variables</a></li>
 <?php endblock() ?>
 
 <?php startblock('tools') ?>
