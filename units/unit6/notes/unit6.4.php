@@ -18,10 +18,10 @@
     <li>Your standard deviation will simply be the combination of the standard deviations of the two variables
         <ul>
             <li>\(\sigma_{\hat{p}_1 - \hat{p}_2} = \sqrt{\frac{\hat{p}_1 (1 - \hat{p}_1)}{n_1} + \frac{\hat{p}_2 (1 - \hat{p}_2)}{n_2}}\)</li>
-            <li>\(\sigma_{\overline{x}_1 - \overline{x}_2} = \sqrt{\frac{s_x_1}{n_1} + \frac{\hat{p}_2 (1 - \hat{p}_2)}{n_2}}\)</li>
+            <li>\(\sigma_{\overline{x}_1 - \overline{x}_2} = \sqrt{\frac{s_{x_1}}{n_1} + \frac{s_{x_2}}{n_2}}\)</li>
         </ul>
     </li>
-    <li>You can use the <a href = "/units/unit4/calculators/combinevar.php">combine random variables</a> calculator to find this (and the mean)
+    <li>You can use the <a href = "/units/unit4/calculators/combinevar.php" class = "notelink">combine random variables</a> calculator to find this (and the mean)
         <ul>
             <li>Note that if you do this, you will need to enter one of the means as a negative</li>
             <li>You will also have to calculate the individual standard deviations yourself</li>
