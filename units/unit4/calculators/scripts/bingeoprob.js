@@ -116,7 +116,7 @@ function calculate() {
     
     // function that gets the binomial probability of something
     let getCoeff = function(k, n) {
-      let logAns = Base(logFac(n) - logFac(k) - logFac(n-k));
+      let logAns = logFac(n) - logFac(k) - logFac(n-k);
       return Math.exp(logAns);
     };
 
