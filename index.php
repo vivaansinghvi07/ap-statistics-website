@@ -27,7 +27,7 @@
       <li><a class="pagelink" href="/units/unit7/unit7.php">Unit 7: Hypothesis Testing</a></li>
     </ul>
 
-    <p class = "notes">The official AP® formula sheet can be found <a href = "https://apcentral.collegeboard.org/media/pdf/statistics-formula-sheet-and-tables-2020.pdf" class = "notelink">here</a>.</p>
+    <p class = "notes">The official AP® formula sheet can be found <a href = "https://apcentral.collegeboard.org/media/pdf/statistics-formula-sheet-and-tables-2020.pdf" class = "notelink" target = "_blank">here</a>.</p>
 
     <hr class = "bottomborder">
 <?php endblock() ?>
