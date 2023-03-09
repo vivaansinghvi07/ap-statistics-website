@@ -15,6 +15,7 @@
 <?php startblock('output') ?>
     <ul class = "notes">
         <li>Starnes, D. S., Yates, D. S., &amp; Moore, D. S. (2014). <i>The Practice of Statistics: For the AP® Exam.</i> W.H. Freeman and Company. </li>
+        <li>Collegeboard's Advanced Placement® Program</li>
         <li>Libraries: 
             <ul>
                 <li><a href = "https://www.mathjax.org/#gettingstarted" class = "notelink">MathJax</a></li>
