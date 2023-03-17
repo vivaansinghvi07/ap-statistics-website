@@ -5,7 +5,7 @@
 <?php endblock() ?>
 
 <?php startblock('title') ?>
-    Unit 1 Image Credits
+    Unit 3 Image Credits
 <?php endblock() ?>
 
 <?php startblock('notes') ?>
