@@ -49,7 +49,7 @@
         <?php startblock('title') ?>
         <?php endblock()?>
     </header>
-    <hr>
+    <hr style = "margin-bottom: 30px;">
     
     <ul class = "notes">
         <?php startblock('notes') ?>
