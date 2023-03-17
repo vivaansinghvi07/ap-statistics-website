@@ -1,3 +1,0 @@
-# Image Credits for Unit 5:
-- [Two Sampling Distributions with Differing Variance](https://www.google.com/url?sa=i&url=https%3A%2F%2Fstatisticsbyjim.com%2Fhypothesis-testing%2Fsampling-distribution%2F&psig=AOvVaw31OY0n_y4axYIiDQhCXzNP&ust=1676964234248000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjoloneyKP9AhUAAAAAHQAAAAAQAw)
-- [Accuracy vs Precision](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FPrecision-versus-accuracy-The-bullseye-represents-the-true-value-eg-the-true_fig6_304674901&psig=AOvVaw1DT-vPe33QnYeB9x5nDvr-&ust=1676964148429000&source=images&cd=vfe&ved=0CA4Q3YkBahcKEwjYgfS0yKP9AhUAAAAAHQAAAAAQAw)
