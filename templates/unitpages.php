@@ -59,6 +59,7 @@
             <?php startblock('tools') ?><?php endblock() ?>
         </ul>
       </li>
+      <li><a class = "pagelink" style = "font-size: 28px;" href = "imagecredits.php">Image Credits</a></li>
     </ul>
     
   </body>
