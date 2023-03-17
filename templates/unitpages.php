@@ -49,12 +49,12 @@
     </header>
     <hr>
     <ul class = "menu">
-      <li><span style = "font-size: 28px;">Notes</span>
+      <li><span style = "font-size: 28px;">Notes:</span>
         <ul>
             <?php startblock('notes') ?><?php endblock() ?>
         </ul>
       </li>
-      <li><span style = "font-size: 28px;">Tools</span>
+      <li><span style = "font-size: 28px;">Tools:</span>
         <ul>
             <?php startblock('tools') ?><?php endblock() ?>
         </ul>
