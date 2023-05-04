@@ -77,7 +77,7 @@ Analyzing Quantitative Data
                     </ul>
                 </li>
                 <li>This value is the <strong>variance</strong>. To find the standard deviation, simply square root this value</li>
-                <li>More formally, standard deviation is the following: <span>$$s_x = \sqrt{\frac{\sum_{}^{}(x_i-\overline{x})}{n-1}}$$</span></li>
+                <li>More formally, standard deviation is the following: <span>$$s_x = \sqrt{\frac{\sum_{}^{}(x_i-\overline{x})^2}{n-1}}$$</span></li>
                 <li>Remember: if you're analyzing the population, divide by \(n\), not \(n-1\)</li>
                 <li>This value is always greater than zero, and have the same unit of measurement as the data</li>
                 <li>However, it is <strong>not resistant</strong> to deviations</li>
